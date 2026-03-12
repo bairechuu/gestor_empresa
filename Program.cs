@@ -16,7 +16,7 @@ namespace gestor_empresa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ());
+            Application.Run(new MainForm());
         }
     }
 }

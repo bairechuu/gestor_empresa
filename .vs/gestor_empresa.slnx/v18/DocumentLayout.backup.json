@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
+              "DocumentIndex": 2,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "01view\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.Designer.cs*",
+              "RelativeToolTip": "01view\\MainForm.Designer.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T19:02:04.518Z",
+              "WhenOpened": "2026-03-12T19:28:13.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
+              "RelativeDocumentMoniker": "01view\\MainForm.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs*",
+              "RelativeToolTip": "01view\\MainForm.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAADgvxIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T19:27:08.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
+              "RelativeDocumentMoniker": "01view\\MainForm.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "01view\\MainForm.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T19:22:57.222Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T17:12:24.534Z",
+              "EditorCaption": ""
             }
           ]
         }
