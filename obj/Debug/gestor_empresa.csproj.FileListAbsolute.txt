@@ -3,6 +3,7 @@ C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\gestor_empresa.exe
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\gestor_empresa.pdb
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\Google.Protobuf.dll
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\Guna.UI2.dll
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\K4os.Hash.xxHash.dll
@@ -32,10 +33,10 @@ C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\System.Numerics.Vectors
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.AssemblyReference.cache
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.MainForm.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Properties.Resources.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.GenerateResource.cache
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.CoreCompileInputs.cache
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_e.920EE98D.Up2Date
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.exe
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.pdb
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.MainForm.resources
