@@ -31,11 +31,11 @@
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.pblContenedor = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.lblInstruccion = new System.Windows.Forms.Label();
             this.txtContrasenya = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.pcbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblError = new System.Windows.Forms.Label();
             this.pblContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,16 @@
             this.pblContenedor.Size = new System.Drawing.Size(600, 450);
             this.pblContenedor.TabIndex = 4;
             // 
+            // lblError
+            // 
+            this.lblError.Font = new System.Drawing.Font("Yu Gothic Medium", 10F);
+            this.lblError.ForeColor = System.Drawing.Color.Brown;
+            this.lblError.Location = new System.Drawing.Point(3, 178);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(594, 27);
+            this.lblError.TabIndex = 8;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblInstruccion
             // 
             this.lblInstruccion.Font = new System.Drawing.Font("Yu Gothic Medium", 10F);
@@ -114,7 +124,7 @@
             this.txtContrasenya.Location = new System.Drawing.Point(60, 275);
             this.txtContrasenya.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContrasenya.Name = "txtContrasenya";
-            this.txtContrasenya.PlaceholderText = "Ej: 67308761H";
+            this.txtContrasenya.PlaceholderText = "Ej: Juan_1234";
             this.txtContrasenya.SelectedText = "";
             this.txtContrasenya.Size = new System.Drawing.Size(489, 58);
             this.txtContrasenya.TabIndex = 6;
@@ -154,16 +164,6 @@
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 4;
             this.pcbLogo.TabStop = false;
-            // 
-            // lblError
-            // 
-            this.lblError.Font = new System.Drawing.Font("Yu Gothic Medium", 10F);
-            this.lblError.Location = new System.Drawing.Point(3, 178);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(594, 27);
-            this.lblError.TabIndex = 8;
-            this.lblError.Text = "Error (placeholder)";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
             // 

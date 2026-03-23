@@ -102,12 +102,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01view\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01view\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="01view\FormEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01view\FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="01view\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="01view\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="02application\GestorLogin.cs" />
+    <Compile Include="03data\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="01view\MainForm.resx">
@@ -137,10 +151,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="02application\" />
-    <Folder Include="03data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\login_bg.jpg" />
   </ItemGroup>
@@ -152,9 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login_bg1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

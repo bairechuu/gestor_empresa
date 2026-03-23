@@ -73,16 +73,6 @@ namespace gestor_empresa.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_bg2 {
-            get {
-                object obj = ResourceManager.GetObject("login_bg2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logo_png {
             get {
                 object obj = ResourceManager.GetObject("logo.png", resourceCulture);
