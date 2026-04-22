@@ -29,9 +29,6 @@ namespace gestor_empresa
         }
         public void CargarDatos()
         {
-            // Hora precargada
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
-
             // DGVs
             DataTable tablaNominas = gestor.ObtenerNominasPorEmpleado(usuario.Id);
             dgvNominas.DataSource = tablaNominas;
@@ -52,7 +49,7 @@ namespace gestor_empresa
         {
             CargarDatos();
         }
-        
+
         private void btnLogOff_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show("¿Seguro que quieres cerrar la sesión?", "Confirmación",
@@ -64,48 +61,34 @@ namespace gestor_empresa
             }
         }
 
-        //Muestra las horas para el fichaje
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm");
         }
-
-        // Lógica del botón para fichar
         public void btnFichar_Click(object sender, EventArgs e)
         {
-            Jornada servicio = new Jornada();
-            DataTable dtJornada = gestor.ObtenerRegistroAbierto(usuario.Id);
+            int empleadoId = usuario.Id;
+            DateTime hoy = DateTime.Today;
 
-            if (dtJornada.Rows.Count == 0)
+            Jornada fichajeAbierto = db.Fichajes.FirstOrDefault
+                (f => f.EmpleadoId == empleadoId && f.HoraSalida == null && f.HoraEntrada >= hoy);
+
+            if (fichajeAbierto == null)
             {
-                int resultado = gestor.InsertarEntrada(usuario.Id);
-
-                if (resultado > 0)
+                Jornada nuevoFichaje = new Jornada
                 {
-                    MessageBox.Show("Entrada registrada con éxito.");
-                    lblEstadoFichaje.Text = "Hora de entrada: " + DateTime.Now.ToString("t");
-                    btnFichar.Text = "Terminar jornada";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo insertar el registro: " + Database.Error);
-                }
+                    EmpleadoId = empleadoId,
+                    HoraEntrada = DateTime.Now
+                };
+                db.Fichajes.Add(nuevoFichaje);
+                db.SaveChanges();
+                MessageBox.Show("Entrada registrada.");
             }
             else
             {
-                int idJornada = Convert.ToInt32(dtJornada.Rows[0]["id_jornada"]);
-
-                int resultado = gestor.ActualizarSalida(idJornada);
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Salida registrada con éxito.");
-                    lblEstadoFichaje.Text = "Salida registrada correctamente.";
-                    btnFichar.Text = "Fichar";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo actualizar el registro: " + Database.Error);
-                }
+                fichajeAbierto.HoraSalida = DateTime.Now;
+                db.SaveChanges();
+                MessageBox.Show("Salida registrada.");
             }
         }
     }

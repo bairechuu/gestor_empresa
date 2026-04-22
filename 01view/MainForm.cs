@@ -13,7 +13,7 @@ namespace gestor_empresa
 {
     public partial class MainForm : Form
     {
-        GestorLogin gest = new GestorLogin();
+        GestorLogin gestor = new GestorLogin();
         public MainForm()
         {
             InitializeComponent();
@@ -24,22 +24,30 @@ namespace gestor_empresa
 
         }
         
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string nifUsuario = txtUser.Text;
             string passwordUsuario = txtContrasenya.Text;
 
-            GestorLogin gestor = new GestorLogin();
             string resultado = gestor.ObtenerRol(nifUsuario, passwordUsuario);
 
             if (resultado == "admin")
             {
+                Empleado emp = null;
+                emp = gestor.ObtenerDatosEmpleado(nifUsuario, passwordUsuario);
                 FormAdmin admin = new FormAdmin();
                 admin.ShowDialog();
             }
             else if (resultado == "empleado")
             {
-                FormEmpleado empleado = new FormEmpleado();
+                Empleado empl = null;
+                empl = gestor.ObtenerDatosEmpleado(nifUsuario, passwordUsuario);
+                Contrato cont = null;
+                cont = gestor.ObtenerContrato(empl);
+                Empresa empr = null;
+                empr = gestor.ObtenerEmpresaPorEmpleado(empl);
+                FormEmpleado empleado = new FormEmpleado(empl, cont, empr);
                 empleado.ShowDialog();
             }
             else if (resultado == "incorrecto")

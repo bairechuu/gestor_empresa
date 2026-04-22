@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.pblContenedor = new Guna.UI2.WinForms.Guna2Panel();
@@ -36,8 +37,13 @@
             this.txtContrasenya = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.pcbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ctbCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.ctbMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pnlArribaDrag = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgcDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pblContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            this.pnlArribaDrag.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -165,6 +171,49 @@
             this.pcbLogo.TabIndex = 4;
             this.pcbLogo.TabStop = false;
             // 
+            // ctbCerrar
+            // 
+            this.ctbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctbCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.ctbCerrar.CustomIconSize = 20F;
+            this.ctbCerrar.FillColor = System.Drawing.Color.Transparent;
+            this.ctbCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctbCerrar.IconColor = System.Drawing.Color.LightGray;
+            this.ctbCerrar.Location = new System.Drawing.Point(1205, 11);
+            this.ctbCerrar.Name = "ctbCerrar";
+            this.ctbCerrar.Size = new System.Drawing.Size(45, 45);
+            this.ctbCerrar.TabIndex = 5;
+            // 
+            // ctbMinimizar
+            // 
+            this.ctbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctbMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.ctbMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.ctbMinimizar.CustomIconSize = 20F;
+            this.ctbMinimizar.FillColor = System.Drawing.Color.Transparent;
+            this.ctbMinimizar.IconColor = System.Drawing.Color.LightGray;
+            this.ctbMinimizar.Location = new System.Drawing.Point(1154, 11);
+            this.ctbMinimizar.Name = "ctbMinimizar";
+            this.ctbMinimizar.Size = new System.Drawing.Size(45, 45);
+            this.ctbMinimizar.TabIndex = 6;
+            // 
+            // pnlArribaDrag
+            // 
+            this.pnlArribaDrag.BackColor = System.Drawing.Color.Transparent;
+            this.pnlArribaDrag.Controls.Add(this.ctbMinimizar);
+            this.pnlArribaDrag.Controls.Add(this.ctbCerrar);
+            this.pnlArribaDrag.Location = new System.Drawing.Point(0, 1);
+            this.pnlArribaDrag.Name = "pnlArribaDrag";
+            this.pnlArribaDrag.Size = new System.Drawing.Size(1263, 68);
+            this.pnlArribaDrag.TabIndex = 7;
+            // 
+            // dgcDrag
+            // 
+            this.dgcDrag.DockIndicatorTransparencyValue = 0.6D;
+            this.dgcDrag.DragStartTransparencyValue = 1D;
+            this.dgcDrag.TargetControl = this.pnlArribaDrag;
+            this.dgcDrag.UseTransparentDrag = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,11 +222,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.pblContenedor);
+            this.Controls.Add(this.pnlArribaDrag);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pblContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            this.pnlArribaDrag.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -191,5 +243,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtContrasenya;
         private System.Windows.Forms.Label lblInstruccion;
         private System.Windows.Forms.Label lblError;
+        private Guna.UI2.WinForms.Guna2ControlBox ctbCerrar;
+        private Guna.UI2.WinForms.Guna2ControlBox ctbMinimizar;
+        private Guna.UI2.WinForms.Guna2Panel pnlArribaDrag;
+        private Guna.UI2.WinForms.Guna2DragControl dgcDrag;
     }
 }

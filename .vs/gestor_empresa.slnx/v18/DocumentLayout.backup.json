@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\gestorlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\gestorlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\gestorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\gestorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\03data\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:03data\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\jornada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\jornada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\gestorlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\gestorlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,8 +38,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs",
+              "RelativeDocumentMoniker": "01view\\FormEmpleado.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs",
+              "RelativeToolTip": "01view\\FormEmpleado.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAqwFAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T18:46:27.422Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormEmpleado.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs",
+              "RelativeDocumentMoniker": "01view\\FormEmpleado.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs [Dise\u00F1o]",
+              "RelativeToolTip": "01view\\FormEmpleado.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T17:51:18.984Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestorEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorEmpleado.cs",
+              "RelativeDocumentMoniker": "02application\\GestorEmpleado.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorEmpleado.cs",
+              "RelativeToolTip": "02application\\GestorEmpleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T11:58:25.526Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -42,51 +93,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GestorLogin.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorLogin.cs",
-              "RelativeDocumentMoniker": "02application\\GestorLogin.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorLogin.cs",
-              "RelativeToolTip": "02application\\GestorLogin.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA0wCEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T16:36:36.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Database.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\03data\\Database.cs",
               "RelativeDocumentMoniker": "03data\\Database.cs",
               "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\03data\\Database.cs",
               "RelativeToolTip": "03data\\Database.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAUwDsAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T15:26:08.797Z"
+              "WhenOpened": "2026-04-05T11:34:41.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
-              "RelativeDocumentMoniker": "01view\\MainForm.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "01view\\MainForm.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "Jornada.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\Jornada.cs",
+              "RelativeDocumentMoniker": "02application\\Jornada.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\Jornada.cs",
+              "RelativeToolTip": "02application\\Jornada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T16:39:27.195Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-03-28T12:07:31.634Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "GestorLogin.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorLogin.cs",
+              "RelativeDocumentMoniker": "02application\\GestorLogin.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorLogin.cs",
+              "RelativeToolTip": "02application\\GestorLogin.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T19:57:09.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
               "RelativeDocumentMoniker": "01view\\MainForm.cs",
               "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
               "RelativeToolTip": "01view\\MainForm.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwDAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T15:20:43.331Z"
+              "WhenOpened": "2026-03-26T19:48:36.336Z"
             }
           ]
         }

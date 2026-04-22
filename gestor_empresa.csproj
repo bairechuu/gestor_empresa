@@ -120,10 +120,18 @@
     <Compile Include="01view\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="02application\Contrato.cs" />
+    <Compile Include="02application\Empleado.cs" />
+    <Compile Include="02application\Empresa.cs" />
+    <Compile Include="02application\GestorEmpleado.cs" />
     <Compile Include="02application\GestorLogin.cs" />
+    <Compile Include="02application\Jornada.cs" />
     <Compile Include="03data\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="01view\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="01view\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,7 +159,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logoBlanco.png.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login_bg.jpg" />
   </ItemGroup>
@@ -163,6 +173,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user img1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log off img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOffNoBg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

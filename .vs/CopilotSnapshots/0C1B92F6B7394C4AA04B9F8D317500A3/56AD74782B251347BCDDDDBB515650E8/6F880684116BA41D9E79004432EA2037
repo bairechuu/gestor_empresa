@@ -29,9 +29,6 @@ namespace gestor_empresa
         }
         public void CargarDatos()
         {
-            // Hora precargada
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
-
             // DGVs
             DataTable tablaNominas = gestor.ObtenerNominasPorEmpleado(usuario.Id);
             dgvNominas.DataSource = tablaNominas;
@@ -52,7 +49,7 @@ namespace gestor_empresa
         {
             CargarDatos();
         }
-        
+
         private void btnLogOff_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show("¿Seguro que quieres cerrar la sesión?", "Confirmación",
@@ -64,48 +61,56 @@ namespace gestor_empresa
             }
         }
 
-        //Muestra las horas para el fichaje
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm");
         }
-
-        // Lógica del botón para fichar
         public void btnFichar_Click(object sender, EventArgs e)
         {
-            Jornada servicio = new Jornada();
-            DataTable dtJornada = gestor.ObtenerRegistroAbierto(usuario.Id);
+            int empleadoId = usuario.Id;
+            DateTime hoy = DateTime.Today;
+            string fechaHoy = hoy.ToString("yyyy-MM-dd");
 
-            if (dtJornada.Rows.Count == 0)
+            // Buscar fichaje abierto del empleado para hoy
+            string sqlBuscar = $"SELECT * FROM jornada WHERE id_empleado = {empleadoId} AND hora_salida IS NULL AND DATE(hora_entrada) = '{fechaHoy}'";
+            DataTable resultado = Database.Consulta(sqlBuscar);
+
+            if (resultado != null && resultado.Rows.Count == 0)
             {
-                int resultado = gestor.InsertarEntrada(usuario.Id);
+                // Registrar entrada
+                string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string sqlInsertar = $"INSERT INTO jornada (id_empleado, fecha, hora_entrada) VALUES ({empleadoId}, '{fechaHoy}', '{horaActual}')";
+                Database.Modificacion(sqlInsertar);
 
-                if (resultado > 0)
+                if (Database.NumRegModif > 0)
                 {
-                    MessageBox.Show("Entrada registrada con éxito.");
-                    lblEstadoFichaje.Text = "Hora de entrada: " + DateTime.Now.ToString("t");
-                    btnFichar.Text = "Terminar jornada";
+                    MessageBox.Show("Entrada registrada.");
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo insertar el registro: " + Database.Error);
+                    MessageBox.Show("Error al registrar la entrada: " + Database.Error);
+                }
+            }
+            else if (resultado != null && resultado.Rows.Count > 0)
+            {
+                // Registrar salida
+                string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                int jornadaId = Convert.ToInt32(resultado.Rows[0]["id"]);
+                string sqlActualizar = $"UPDATE jornada SET hora_salida = '{horaActual}' WHERE id = {jornadaId}";
+                Database.Modificacion(sqlActualizar);
+
+                if (Database.NumRegModif > 0)
+                {
+                    MessageBox.Show("Salida registrada.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar la salida: " + Database.Error);
                 }
             }
             else
             {
-                int idJornada = Convert.ToInt32(dtJornada.Rows[0]["id_jornada"]);
-
-                int resultado = gestor.ActualizarSalida(idJornada);
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Salida registrada con éxito.");
-                    lblEstadoFichaje.Text = "Salida registrada correctamente.";
-                    btnFichar.Text = "Fichar";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo actualizar el registro: " + Database.Error);
-                }
+                MessageBox.Show("Error en la base de datos: " + Database.Error);
             }
         }
     }
