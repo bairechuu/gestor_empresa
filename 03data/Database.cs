@@ -1,40 +1,51 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestor_empresa
 {
+    /* 
+        He copiado la conexión a la base de datos del proyecto academia, modificándola en gran medida.
+        Principalmente he añadido unos parámetros opcionales para evitar la posibilidad de SQL injection
+        y he eliminado los finally (ya que no terminaba de comprenderlos al 100%) cambiándolos por using.
+     */
     internal class Database
     {
-        // Error, en caso de que haya
         static public string Error { get; set; }
-        // Cantidad de registros modificados
         static public int NumRegModif { set; get; }
 
-        // Método que conecta con la BD
+        // Conexión a la BD
         static private MySqlConnection Conectar()
         {
             string cad = "datasource=127.0.0.1; port=3306; username=root; password=; database=gestor_empresa;";
             MySqlConnection conexionBD = new MySqlConnection(cad);
-            return (conexionBD);
+            return conexionBD;
         }
 
-        // Consulta de tipo SELECT que devuelve un DataTable
-        static public DataTable Consulta(string sql)
+        // Método de consulta con parámetros opcionales anti SQL injection
+        static public DataTable Consulta(string sql, MySqlParameter[] parametros = null)
         {
-            MySqlConnection conexionBD = Conectar();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexionBD);
             try
             {
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                NumRegModif = 0;
-                Error = "";
-                return ds.Tables[0];
+                using (MySqlConnection conexionBD = Conectar())
+                {
+                    using (MySqlCommand comando = new MySqlCommand(sql, conexionBD))
+                    {
+                        if (parametros != null)
+                        {
+                            comando.Parameters.AddRange(parametros);
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(comando))
+                        {
+                            DataSet ds = new DataSet();
+                            adapter.Fill(ds);
+                            NumRegModif = 0;
+                            Error = "";
+                            return ds.Tables[0];
+                        }
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -42,21 +53,28 @@ namespace gestor_empresa
                 NumRegModif = -1;
                 return null;
             }
-            finally { conexionBD.Close(); }
         }
 
-        /* Consulta de acción INSERT, UPDATE Y DELETE se devuelve el número
-           de registros afectados mediante NumRegModif */
-        static public int Modificacion(string sql)
+        // Método de modificación con parámetros opcionales anti SQL injection
+        static public int Modificacion(string sql, MySqlParameter[] parametros = null)
         {
-            MySqlConnection conexionBD = Conectar();
             try
             {
-                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                conexionBD.Open();
-                NumRegModif = comando.ExecuteNonQuery();
-                Error = "";
-                return NumRegModif;
+                using (MySqlConnection conexionBD = Conectar())
+                {
+                    using (MySqlCommand comando = new MySqlCommand(sql, conexionBD))
+                    {
+                        if (parametros != null)
+                        {
+                            comando.Parameters.AddRange(parametros);
+                        }
+
+                        conexionBD.Open();
+                        NumRegModif = comando.ExecuteNonQuery();
+                        Error = "";
+                        return NumRegModif;
+                    }
+                }
             }
             catch (MySqlException ex)
             {
@@ -64,7 +82,6 @@ namespace gestor_empresa
                 NumRegModif = -1;
                 return NumRegModif;
             }
-            finally { conexionBD.Close(); }
         }
     }
 }

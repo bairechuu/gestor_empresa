@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlArriba = new Guna.UI2.WinForms.Guna2Panel();
-            this.pcbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ctbMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ctbCerrar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.dgcDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlIzq = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnLogOff = new Guna.UI2.WinForms.Guna2Button();
             this.sprInfoIzq = new Guna.UI2.WinForms.Guna2Separator();
             this.lblInfoEmpIzq = new System.Windows.Forms.Label();
-            this.cpbImg = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblInfoEmpMedio = new System.Windows.Forms.Label();
             this.gbxDetallesContrato = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -65,10 +62,11 @@
             this.lblJornada = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLogOff = new Guna.UI2.WinForms.Guna2Button();
+            this.cpbImg = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pcbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlArriba.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlIzq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cpbImg)).BeginInit();
             this.gbxDetallesContrato.SuspendLayout();
             this.gbxNominas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNominas)).BeginInit();
@@ -76,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajas)).BeginInit();
             this.gbxJornada.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlArriba
@@ -89,17 +89,6 @@
             this.pnlArriba.Name = "pnlArriba";
             this.pnlArriba.Size = new System.Drawing.Size(1280, 75);
             this.pnlArriba.TabIndex = 0;
-            // 
-            // pcbLogo
-            // 
-            this.pcbLogo.Image = global::gestor_empresa.Properties.Resources.logoBlanco_png;
-            this.pcbLogo.ImageRotate = 0F;
-            this.pcbLogo.Location = new System.Drawing.Point(-122, -19);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(478, 113);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbLogo.TabIndex = 5;
-            this.pcbLogo.TabStop = false;
             // 
             // ctbMinimizar
             // 
@@ -141,29 +130,6 @@
             this.pnlIzq.Size = new System.Drawing.Size(300, 645);
             this.pnlIzq.TabIndex = 1;
             // 
-            // btnLogOff
-            // 
-            this.btnLogOff.DefaultAutoSize = true;
-            this.btnLogOff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogOff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogOff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogOff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogOff.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogOff.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOff.ForeColor = System.Drawing.Color.White;
-            this.btnLogOff.HoverState.FillColor = System.Drawing.Color.LightGray;
-            this.btnLogOff.Image = global::gestor_empresa.Properties.Resources.LogOffNoBg;
-            this.btnLogOff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOff.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLogOff.Location = new System.Drawing.Point(28, 564);
-            this.btnLogOff.Name = "btnLogOff";
-            this.btnLogOff.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogOff.Size = new System.Drawing.Size(208, 43);
-            this.btnLogOff.TabIndex = 3;
-            this.btnLogOff.Text = "Cerrar sesión";
-            this.btnLogOff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
-            // 
             // sprInfoIzq
             // 
             this.sprInfoIzq.FillColor = System.Drawing.Color.DimGray;
@@ -184,20 +150,6 @@
             this.lblInfoEmpIzq.TabIndex = 1;
             this.lblInfoEmpIzq.Text = "placeholder nombre 76767 ububebbwbe";
             this.lblInfoEmpIzq.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cpbImg
-            // 
-            this.cpbImg.FillColor = System.Drawing.Color.Transparent;
-            this.cpbImg.Image = global::gestor_empresa.Properties.Resources.user_img1;
-            this.cpbImg.ImageRotate = 0F;
-            this.cpbImg.InitialImage = global::gestor_empresa.Properties.Resources.user_img1;
-            this.cpbImg.Location = new System.Drawing.Point(50, 40);
-            this.cpbImg.Name = "cpbImg";
-            this.cpbImg.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.cpbImg.Size = new System.Drawing.Size(200, 200);
-            this.cpbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.cpbImg.TabIndex = 0;
-            this.cpbImg.TabStop = false;
             // 
             // lblInfoEmpMedio
             // 
@@ -318,25 +270,25 @@
             // dgvNominas
             // 
             this.dgvNominas.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvNominas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNominas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvNominas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNominas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNominas.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNominas.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNominas.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvNominas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvNominas.Location = new System.Drawing.Point(13, 15);
             this.dgvNominas.MultiSelect = false;
@@ -388,27 +340,27 @@
             // dgvBajas
             // 
             this.dgvBajas.AllowUserToAddRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            this.dgvBajas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvBajas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvBajas.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvBajas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvBajas.Location = new System.Drawing.Point(13, 15);
             this.dgvBajas.MultiSelect = false;
@@ -479,7 +431,7 @@
             this.lblEstadoFichaje.BackColor = System.Drawing.Color.Transparent;
             this.lblEstadoFichaje.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoFichaje.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoFichaje.Location = new System.Drawing.Point(23, 246);
+            this.lblEstadoFichaje.Location = new System.Drawing.Point(23, 257);
             this.lblEstadoFichaje.Name = "lblEstadoFichaje";
             this.lblEstadoFichaje.Size = new System.Drawing.Size(207, 62);
             this.lblEstadoFichaje.TabIndex = 16;
@@ -515,7 +467,7 @@
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 32F, System.Drawing.FontStyle.Bold);
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(48, 64);
+            this.lblHora.Location = new System.Drawing.Point(48, 63);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(163, 72);
             this.lblHora.TabIndex = 14;
@@ -570,6 +522,53 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnLogOff
+            // 
+            this.btnLogOff.DefaultAutoSize = true;
+            this.btnLogOff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogOff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOff.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogOff.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOff.ForeColor = System.Drawing.Color.White;
+            this.btnLogOff.HoverState.FillColor = System.Drawing.Color.LightGray;
+            this.btnLogOff.Image = global::gestor_empresa.Properties.Resources.LogOffNoBg;
+            this.btnLogOff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOff.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnLogOff.Location = new System.Drawing.Point(42, 564);
+            this.btnLogOff.Name = "btnLogOff";
+            this.btnLogOff.Size = new System.Drawing.Size(198, 43);
+            this.btnLogOff.TabIndex = 3;
+            this.btnLogOff.Text = "Cerrar sesión";
+            this.btnLogOff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
+            // 
+            // cpbImg
+            // 
+            this.cpbImg.FillColor = System.Drawing.Color.Transparent;
+            this.cpbImg.Image = global::gestor_empresa.Properties.Resources.user_img1;
+            this.cpbImg.ImageRotate = 0F;
+            this.cpbImg.InitialImage = global::gestor_empresa.Properties.Resources.user_img1;
+            this.cpbImg.Location = new System.Drawing.Point(50, 40);
+            this.cpbImg.Name = "cpbImg";
+            this.cpbImg.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cpbImg.Size = new System.Drawing.Size(200, 200);
+            this.cpbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.cpbImg.TabIndex = 0;
+            this.cpbImg.TabStop = false;
+            // 
+            // pcbLogo
+            // 
+            this.pcbLogo.Image = global::gestor_empresa.Properties.Resources.logoBlanco_png;
+            this.pcbLogo.ImageRotate = 0F;
+            this.pcbLogo.Location = new System.Drawing.Point(-122, -19);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(478, 113);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogo.TabIndex = 5;
+            this.pcbLogo.TabStop = false;
+            // 
             // FormEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -588,13 +587,10 @@
             this.Controls.Add(this.lblInfoEmpMedio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEmpleado";
-            this.Text = "ec";
             this.Load += new System.EventHandler(this.FormEmpleado_Load);
             this.pnlArriba.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.pnlIzq.ResumeLayout(false);
             this.pnlIzq.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cpbImg)).EndInit();
             this.gbxDetallesContrato.ResumeLayout(false);
             this.gbxDetallesContrato.PerformLayout();
             this.gbxNominas.ResumeLayout(false);
@@ -604,6 +600,8 @@
             this.gbxJornada.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cpbImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
