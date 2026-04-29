@@ -1,4 +1,4 @@
-﻿namespace gestor_empresa._01view.UserControlsAdmin
+﻿namespace gestorempresa.Views.Admin
 {
     partial class UC_Presencia
     {

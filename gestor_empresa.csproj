@@ -120,6 +120,12 @@
     <Compile Include="01view\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="01view\UserControlsAdmin\UCPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="01view\UserControlsAdmin\UCPersonal.Designer.cs">
+      <DependentUpon>UCPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="01view\UserControlsAdmin\UC_Contratos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,12 +137,6 @@
     </Compile>
     <Compile Include="01view\UserControlsAdmin\UC_Economico.Designer.cs">
       <DependentUpon>UC_Economico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="01view\UserControlsAdmin\UC_Personal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="01view\UserControlsAdmin\UC_Personal.Designer.cs">
-      <DependentUpon>UC_Personal.cs</DependentUpon>
     </Compile>
     <Compile Include="01view\UserControlsAdmin\UC_Presencia.cs">
       <SubType>UserControl</SubType>
@@ -168,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="01view\UserControlsAdmin\UC_Economico.resx">
       <DependentUpon>UC_Economico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="01view\UserControlsAdmin\UC_Personal.resx">
-      <DependentUpon>UC_Personal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01view\UserControlsAdmin\UC_Presencia.resx">
       <DependentUpon>UC_Presencia.cs</DependentUpon>

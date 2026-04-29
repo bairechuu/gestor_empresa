@@ -36,13 +36,12 @@ C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.A
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.FormAdmin.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.FormEmpleado.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.MainForm.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa._01view.UserControlsAdmin.UC_Contratos.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa._01view.UserControlsAdmin.UC_Economico.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa._01view.UserControlsAdmin.UC_Personal.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa._01view.UserControlsAdmin.UC_Presencia.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Properties.Resources.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.GenerateResource.cache
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.CoreCompileInputs.cache
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_e.920EE98D.Up2Date
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.exe
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.pdb
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Contratos.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Economico.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Presencia.resources

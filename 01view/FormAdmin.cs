@@ -1,4 +1,4 @@
-﻿using gestor_empresa._01view.UserControlsAdmin;
+﻿using gestorempresa.Views.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +26,7 @@ namespace gestor_empresa
         */
         private void btnGestPersonal_Click(object sender, EventArgs e)
         {
-            UC_Personal UCPersonal = new UC_Personal();
+            UCPersonal UCPersonal = new UCPersonal();
             pnlCentral.Controls.Clear();
             UCPersonal.Dock = DockStyle.Fill;
             pnlCentral.Controls.Add(UCPersonal);

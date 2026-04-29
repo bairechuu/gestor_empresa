@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gestor_empresa._01view.UserControlsAdmin
+namespace gestorempresa.Views.Admin
 {
     public partial class UC_Presencia : UserControl
     {
