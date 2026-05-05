@@ -1,124 +1,130 @@
-﻿using MySql.Data.MySqlClient;
+﻿using gestor_empresa;
+using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
-namespace gestor_empresa
+namespace gestorempresa
 {
     class GestorUCPersonal
     {
-        // ── EMPLEADOS ────────────────────────────────────────────────
-
-        public DataTable ObtenerTodosEmpleados()
+        // ----------------- Empleados -----------------
+        public DataTable ObtenerEmpleados()
         {
-            string sql = "SELECT id_empleado, nif, nombre, apellidos, rol FROM empleado ORDER BY apellidos, nombre";
+            string sql = "SELECT nif, nombre, apellidos, rol FROM empleado";
             return Database.Consulta(sql);
         }
 
         public DataTable BuscarEmpleados(string filtro)
         {
-            string sql = @"SELECT id_empleado, nif, nombre, apellidos, rol 
-                           FROM empleado 
-                           WHERE nif LIKE @filtro OR nombre LIKE @filtro OR apellidos LIKE @filtro
-                           ORDER BY apellidos, nombre";
-            var p = new MySqlParameter[] {
+            string sql = "SELECT nif, nombre, apellidos, rol FROM empleado WHERE nif LIKE @filtro OR nombre LIKE @filtro OR apellidos LIKE @filtro";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
                 new MySqlParameter("@filtro", "%" + filtro + "%")
             };
-            return Database.Consulta(sql, p);
+            return Database.Consulta(sql, parametros);
         }
 
-        public int InsertarEmpleado(string nif, string nombre, string apellidos, string password, string rol)
+        public int CrearEmpleado(string nif, string nombre, string apellidos)
         {
-            string sql = @"INSERT INTO empleado (nif, nombre, apellidos, password, rol) 
-                           VALUES (@nif, @nombre, @apellidos, @password, @rol)";
-            var p = new MySqlParameter[] {
+            string sql = "INSERT INTO empleado (nif, nombre, apellidos, password, rol) VALUES (@nif, @nombre, @apellidos, @password, 'empleado')";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
                 new MySqlParameter("@nif", nif),
                 new MySqlParameter("@nombre", nombre),
                 new MySqlParameter("@apellidos", apellidos),
-                new MySqlParameter("@password", password),
-                new MySqlParameter("@rol", rol)
+                new MySqlParameter("@password", nif)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        public int ModificarEmpleado(int idEmpleado, string nif, string nombre, string apellidos, string rol)
+        public int ModificarEmpleado(string nifAnterior, string nif, string nombre, string apellidos)
         {
-            string sql = @"UPDATE empleado SET nif=@nif, nombre=@nombre, apellidos=@apellidos, rol=@rol
-                           WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@id", idEmpleado),
+            string sql = "UPDATE empleado SET nif = @nif, nombre = @nombre, apellidos = @apellidos WHERE nif = @nifAnterior";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
                 new MySqlParameter("@nif", nif),
                 new MySqlParameter("@nombre", nombre),
                 new MySqlParameter("@apellidos", apellidos),
-                new MySqlParameter("@rol", rol)
+                new MySqlParameter("@nifAnterior", nifAnterior)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        /// <summary>Da de baja lógica: pone a inactivo todos los contratos del empleado.</summary>
-        public int DarDeBajaEmpleado(int idEmpleado)
+        public int DarBajaEmpleado(string nif)
         {
-            string sql = "UPDATE contrato SET estado='inactivo' WHERE id_empleado=@id";
-            var p = new MySqlParameter[] { new MySqlParameter("@id", idEmpleado) };
-            return Database.Modificacion(sql, p);
-        }
-
-        // ── ACCESOS ──────────────────────────────────────────────────
-
-        public int CambiarRol(int idEmpleado, string nuevoRol)
-        {
-            string sql = "UPDATE empleado SET rol=@rol WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@rol", nuevoRol),
-                new MySqlParameter("@id",  idEmpleado)
+            string sql = "DELETE FROM empleado WHERE nif = @nif";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@nif", nif)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        public int ResetearPassword(int idEmpleado, string nuevaPassword)
+        public int ActualizarRol(string nif, string rol)
         {
-            string sql = "UPDATE empleado SET password=@pw WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@pw", nuevaPassword),
-                new MySqlParameter("@id", idEmpleado)
+            string sql = "UPDATE empleado SET rol = @rol WHERE nif = @nif";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@rol", rol),
+                new MySqlParameter("@nif", nif)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        // ── EMPRESAS ─────────────────────────────────────────────────
-
-        public DataTable ObtenerTodasEmpresas()
+        public int ResetearPassword(string nif, string nuevaPassword)
         {
-            string sql = "SELECT id_empresa, nombre, cif FROM empresa ORDER BY nombre";
+            string sql = "UPDATE empleado SET password = @password WHERE nif = @nif";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@password", nuevaPassword),
+                new MySqlParameter("@nif", nif)
+            };
+            return Database.Modificacion(sql, parametros);
+        }
+
+        // ----------------- Empresas -----------------
+        public DataTable ObtenerEmpresas()
+        {
+            string sql = "SELECT cif, nombre FROM empresa";
             return Database.Consulta(sql);
         }
 
-        public int InsertarEmpresa(string nombre, string cif)
+        public int CrearEmpresa(string cif, string nombre)
         {
-            string sql = "INSERT INTO empresa (nombre, cif) VALUES (@nombre, @cif)";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@cif",    cif)
+            string sql = "INSERT INTO empresa (cif, nombre) VALUES (@cif, @nombre)";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@cif", cif),
+                new MySqlParameter("@nombre", nombre)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        public int ModificarEmpresa(int idEmpresa, string nombre, string cif)
+        public int ModificarEmpresa(string cifAnterior, string cif, string nombre)
         {
-            string sql = "UPDATE empresa SET nombre=@nombre, cif=@cif WHERE id_empresa=@id";
-            var p = new MySqlParameter[] {
+            string sql = "UPDATE empresa SET cif = @cif, nombre = @nombre WHERE cif = @cifAnterior";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@cif", cif),
                 new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@cif",    cif),
-                new MySqlParameter("@id",     idEmpresa)
+                new MySqlParameter("@cifAnterior", cifAnterior)
             };
-            return Database.Modificacion(sql, p);
+            return Database.Modificacion(sql, parametros);
         }
 
-        public int EliminarEmpresa(int idEmpresa)
+        public int EliminarEmpresa(string cif)
         {
-            // Solo elimina si no tiene contratos asociados
-            string sql = @"DELETE FROM empresa WHERE id_empresa=@id 
-                           AND id_empresa NOT IN (SELECT id_empresa FROM contrato)";
-            var p = new MySqlParameter[] { new MySqlParameter("@id", idEmpresa) };
-            return Database.Modificacion(sql, p);
+            string sql = "DELETE FROM empresa WHERE cif = @cif";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@cif", cif)
+            };
+            return Database.Modificacion(sql, parametros);
+        }
+
+        public string ObtenerError()
+        {
+            return Database.Error;
         }
     }
 }

@@ -163,6 +163,9 @@
     <EmbeddedResource Include="01view\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="01view\UserControlsAdmin\UCPersonal.resx">
+      <DependentUpon>UCPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="01view\UserControlsAdmin\UC_Contratos.resx">
       <DependentUpon>UC_Contratos.cs</DependentUpon>
     </EmbeddedResource>

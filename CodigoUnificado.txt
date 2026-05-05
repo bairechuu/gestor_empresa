@@ -1557,533 +1557,15 @@ namespace gestor_empresa
 
 
 --- CLASE: UCPersonal.cs ---
-using gestor_empresa;
-using MySql.Data.MySqlClient;
 using System;
-using System.Data;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace gestorempresa.Views.Admin
 {
     public partial class UCPersonal : UserControl
-{
-    private int idEmpleadoSeleccionado = -1;
-    private int idEmpresaSeleccionada = -1;
-
-    public UCPersonal()
     {
-        InitializeComponent();
-
-        btnLimpiarEmpleado.Click += btnLimpiarEmpleado_Click;
-        btnLimpiarEmpresa.Click += btnLimpiarEmpresa_Click;
+        
     }
-
-    private void UCPersonal_Load(object sender, EventArgs e)
-    {
-        ConfigurarGrids();
-        CargarEmpleados();
-        CargarEmpresas();
-        LimpiarFormularioEmpleado();
-        LimpiarFormularioEmpresa();
-    }
-
-    private void ConfigurarGrids()
-    {
-        dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvEmpleados.MultiSelect = false;
-        dgvEmpleados.ReadOnly = true;
-
-        dgvEmpresas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        dgvEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvEmpresas.MultiSelect = false;
-        dgvEmpresas.ReadOnly = true;
-    }
-
-    private void CargarEmpleados()
-    {
-        string sql = @"
-                SELECT 
-                    e.idempleado AS ID,
-                    e.nif AS NIF,
-                    e.nombre AS Nombre,
-                    e.apellidos AS Apellidos,
-                    e.rol AS Rol
-                FROM empleado e
-                ORDER BY e.apellidos, e.nombre";
-
-        DataTable tabla = Database.Consulta(sql);
-
-        if (tabla != null)
-        {
-            dgvEmpleados.DataSource = tabla;
-        }
-        else
-        {
-            MessageBox.Show("Error al cargar empleados: " + Database.Error);
-        }
-    }
-
-    private void CargarEmpresas()
-    {
-        string sql = @"
-                SELECT 
-                    idempresa AS ID,
-                    nombre AS Nombre,
-                    cif AS CIF
-                FROM empresa
-                ORDER BY nombre";
-
-        DataTable tabla = Database.Consulta(sql);
-
-        if (tabla != null)
-        {
-            dgvEmpresas.DataSource = tabla;
-        }
-        else
-        {
-            MessageBox.Show("Error al cargar empresas: " + Database.Error);
-        }
-    }
-
-    private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
-    {
-        string texto = txtBuscarEmpleado.Text.Trim();
-
-        string sql = @"
-                SELECT 
-                    e.idempleado AS ID,
-                    e.nif AS NIF,
-                    e.nombre AS Nombre,
-                    e.apellidos AS Apellidos,
-                    e.rol AS Rol
-                FROM empleado e
-                WHERE e.nif LIKE @texto
-                   OR e.nombre LIKE @texto
-                   OR e.apellidos LIKE @texto
-                ORDER BY e.apellidos, e.nombre";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@texto", "%" + texto + "%")
-            };
-
-        DataTable tabla = Database.Consulta(sql, parametros);
-
-        if (tabla != null)
-        {
-            dgvEmpleados.DataSource = tabla;
-        }
-    }
-
-    private void dgvEmpleados_SelectionChanged(object sender, EventArgs e)
-    {
-        if (dgvEmpleados.CurrentRow == null || dgvEmpleados.CurrentRow.Index < 0)
-            return;
-
-        if (dgvEmpleados.CurrentRow.Cells["ID"].Value == null)
-            return;
-
-        idEmpleadoSeleccionado = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["ID"].Value);
-        txtNif.Text = dgvEmpleados.CurrentRow.Cells["NIF"].Value?.ToString() ?? "";
-        txtNombre.Text = dgvEmpleados.CurrentRow.Cells["Nombre"].Value?.ToString() ?? "";
-        txtApellidos.Text = dgvEmpleados.CurrentRow.Cells["Apellidos"].Value?.ToString() ?? "";
-        cmbRol.SelectedItem = dgvEmpleados.CurrentRow.Cells["Rol"].Value?.ToString() ?? "empleado";
-    }
-
-    private void dgvEmpresas_SelectionChanged(object sender, EventArgs e)
-    {
-        if (dgvEmpresas.CurrentRow == null || dgvEmpresas.CurrentRow.Index < 0)
-            return;
-
-        if (dgvEmpresas.CurrentRow.Cells["ID"].Value == null)
-            return;
-
-        idEmpresaSeleccionada = Convert.ToInt32(dgvEmpresas.CurrentRow.Cells["ID"].Value);
-        txtNombreEmpresa.Text = dgvEmpresas.CurrentRow.Cells["Nombre"].Value?.ToString() ?? "";
-        txtCif.Text = dgvEmpresas.CurrentRow.Cells["CIF"].Value?.ToString() ?? "";
-    }
-
-    private void btnCrearEmpleado_Click(object sender, EventArgs e)
-    {
-        if (!ValidarEmpleado(true))
-            return;
-
-        string sql = @"
-                INSERT INTO empleado (nif, nombre, apellidos, password, rol)
-                VALUES (@nif, @nombre, @apellidos, @password, @rol)";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@nif", txtNif.Text.Trim()),
-                new MySqlParameter("@nombre", txtNombre.Text.Trim()),
-                new MySqlParameter("@apellidos", txtApellidos.Text.Trim()),
-                new MySqlParameter("@password", txtPassword.Text.Trim()),
-                new MySqlParameter("@rol", cmbRol.SelectedItem?.ToString() ?? "empleado")
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empleado creado correctamente.");
-            CargarEmpleados();
-            LimpiarFormularioEmpleado();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo crear el empleado. " + Database.Error);
-        }
-    }
-
-    private void btnModificarEmpleado_Click(object sender, EventArgs e)
-    {
-        if (idEmpleadoSeleccionado <= 0)
-        {
-            MessageBox.Show("Selecciona un empleado.");
-            return;
-        }
-
-        if (!ValidarEmpleado(false))
-            return;
-
-        string sql = @"
-                UPDATE empleado
-                SET nif = @nif,
-                    nombre = @nombre,
-                    apellidos = @apellidos
-                WHERE idempleado = @idEmpleado";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@nif", txtNif.Text.Trim()),
-                new MySqlParameter("@nombre", txtNombre.Text.Trim()),
-                new MySqlParameter("@apellidos", txtApellidos.Text.Trim()),
-                new MySqlParameter("@idEmpleado", idEmpleadoSeleccionado)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empleado modificado correctamente.");
-            CargarEmpleados();
-            LimpiarFormularioEmpleado();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo modificar el empleado. " + Database.Error);
-        }
-    }
-
-    private void btnDarBajaEmpleado_Click(object sender, EventArgs e)
-    {
-        if (idEmpleadoSeleccionado <= 0)
-        {
-            MessageBox.Show("Selecciona un empleado.");
-            return;
-        }
-
-        DialogResult respuesta = MessageBox.Show(
-            "Se marcará como inactivo el último contrato activo del empleado. ¿Continuar?",
-            "Confirmación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-        if (respuesta != DialogResult.Yes)
-            return;
-
-        string sql = @"
-                UPDATE contrato
-                SET estado = 'inactivo',
-                    fechafin = CURDATE()
-                WHERE idempleado = @idEmpleado
-                  AND estado = 'activo'
-                ORDER BY idcontrato DESC
-                LIMIT 1";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@idEmpleado", idEmpleadoSeleccionado)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empleado dado de baja correctamente.");
-            CargarEmpleados();
-            LimpiarFormularioEmpleado();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo dar de baja al empleado. " + Database.Error);
-        }
-    }
-
-    private void btnCambiarRol_Click(object sender, EventArgs e)
-    {
-        if (idEmpleadoSeleccionado <= 0)
-        {
-            MessageBox.Show("Selecciona un empleado.");
-            return;
-        }
-
-        if (cmbRol.SelectedItem == null)
-        {
-            MessageBox.Show("Selecciona un rol.");
-            return;
-        }
-
-        string sql = @"
-                UPDATE empleado
-                SET rol = @rol
-                WHERE idempleado = @idEmpleado";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@rol", cmbRol.SelectedItem.ToString()),
-                new MySqlParameter("@idEmpleado", idEmpleadoSeleccionado)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Rol actualizado correctamente.");
-            CargarEmpleados();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo actualizar el rol. " + Database.Error);
-        }
-    }
-
-    private void btnResetPassword_Click(object sender, EventArgs e)
-    {
-        if (idEmpleadoSeleccionado <= 0)
-        {
-            MessageBox.Show("Selecciona un empleado.");
-            return;
-        }
-
-        if (string.IsNullOrWhiteSpace(txtPassword.Text))
-        {
-            MessageBox.Show("Introduce una nueva contraseña.");
-            return;
-        }
-
-        string sql = @"
-                UPDATE empleado
-                SET password = @password
-                WHERE idempleado = @idEmpleado";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@password", txtPassword.Text.Trim()),
-                new MySqlParameter("@idEmpleado", idEmpleadoSeleccionado)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Contraseña actualizada correctamente.");
-            txtPassword.Clear();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo actualizar la contraseña. " + Database.Error);
-        }
-    }
-
-    private void btnCrearEmpresa_Click(object sender, EventArgs e)
-    {
-        if (!ValidarEmpresa())
-            return;
-
-        string sql = @"
-                INSERT INTO empresa (nombre, cif)
-                VALUES (@nombre, @cif)";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@nombre", txtNombreEmpresa.Text.Trim()),
-                new MySqlParameter("@cif", txtCif.Text.Trim())
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empresa creada correctamente.");
-            CargarEmpresas();
-            LimpiarFormularioEmpresa();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo crear la empresa. " + Database.Error);
-        }
-    }
-
-    private void btnModificarEmpresa_Click(object sender, EventArgs e)
-    {
-        if (idEmpresaSeleccionada <= 0)
-        {
-            MessageBox.Show("Selecciona una empresa.");
-            return;
-        }
-
-        if (!ValidarEmpresa())
-            return;
-
-        string sql = @"
-                UPDATE empresa
-                SET nombre = @nombre,
-                    cif = @cif
-                WHERE idempresa = @idEmpresa";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@nombre", txtNombreEmpresa.Text.Trim()),
-                new MySqlParameter("@cif", txtCif.Text.Trim()),
-                new MySqlParameter("@idEmpresa", idEmpresaSeleccionada)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empresa modificada correctamente.");
-            CargarEmpresas();
-            LimpiarFormularioEmpresa();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo modificar la empresa. " + Database.Error);
-        }
-    }
-
-    private void btnEliminarEmpresa_Click(object sender, EventArgs e)
-    {
-        if (idEmpresaSeleccionada <= 0)
-        {
-            MessageBox.Show("Selecciona una empresa.");
-            return;
-        }
-
-        DialogResult respuesta = MessageBox.Show(
-            "¿Seguro que quieres eliminar la empresa seleccionada?",
-            "Confirmación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Warning);
-
-        if (respuesta != DialogResult.Yes)
-            return;
-
-        string sql = "DELETE FROM empresa WHERE idempresa = @idEmpresa";
-
-        MySqlParameter[] parametros =
-        {
-                new MySqlParameter("@idEmpresa", idEmpresaSeleccionada)
-            };
-
-        int resultado = Database.Modificacion(sql, parametros);
-
-        if (resultado > 0)
-        {
-            MessageBox.Show("Empresa eliminada correctamente.");
-            CargarEmpresas();
-            LimpiarFormularioEmpresa();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo eliminar la empresa. Puede tener contratos asociados. " + Database.Error);
-        }
-    }
-
-    private void btnLimpiarEmpleado_Click(object sender, EventArgs e)
-    {
-        LimpiarFormularioEmpleado();
-    }
-
-    private void btnLimpiarEmpresa_Click(object sender, EventArgs e)
-    {
-        LimpiarFormularioEmpresa();
-    }
-
-    private void LimpiarFormularioEmpleado()
-    {
-        idEmpleadoSeleccionado = -1;
-        txtNif.Clear();
-        txtNombre.Clear();
-        txtApellidos.Clear();
-        txtPassword.Clear();
-        cmbRol.SelectedIndex = 0;
-        dgvEmpleados.ClearSelection();
-    }
-
-    private void LimpiarFormularioEmpresa()
-    {
-        idEmpresaSeleccionada = -1;
-        txtNombreEmpresa.Clear();
-        txtCif.Clear();
-        dgvEmpresas.ClearSelection();
-    }
-
-    private bool ValidarEmpleado(bool validarPassword)
-    {
-        if (string.IsNullOrWhiteSpace(txtNif.Text))
-        {
-            MessageBox.Show("El NIF es obligatorio.");
-            return false;
-        }
-
-        if (string.IsNullOrWhiteSpace(txtNombre.Text))
-        {
-            MessageBox.Show("El nombre es obligatorio.");
-            return false;
-        }
-
-        if (string.IsNullOrWhiteSpace(txtApellidos.Text))
-        {
-            MessageBox.Show("Los apellidos son obligatorios.");
-            return false;
-        }
-
-        if (cmbRol.SelectedItem == null)
-        {
-            MessageBox.Show("Selecciona un rol.");
-            return false;
-        }
-
-        if (validarPassword && string.IsNullOrWhiteSpace(txtPassword.Text))
-        {
-            MessageBox.Show("La contraseña es obligatoria al crear el empleado.");
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool ValidarEmpresa()
-    {
-        if (string.IsNullOrWhiteSpace(txtNombreEmpresa.Text))
-        {
-            MessageBox.Show("El nombre de la empresa es obligatorio.");
-            return false;
-        }
-
-        if (string.IsNullOrWhiteSpace(txtCif.Text))
-        {
-            MessageBox.Show("El CIF es obligatorio.");
-            return false;
-        }
-
-        return true;
-    }
-}
 }
 
 
@@ -2118,16 +1600,15 @@ namespace gestorempresa.Views.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tbcPersonal = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpEmpleados = new System.Windows.Forms.TabPage();
-            this.lblListadoEmpleados = new System.Windows.Forms.Label();
             this.gbxAccesos = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnResetPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnCambiarRol = new Guna.UI2.WinForms.Guna2Button();
@@ -2160,6 +1641,7 @@ namespace gestorempresa.Views.Admin
             this.lblCif = new System.Windows.Forms.Label();
             this.lblNombreEmpresa = new System.Windows.Forms.Label();
             this.dgvEmpresas = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lblListadoEmpleados = new System.Windows.Forms.Label();
             this.tbcPersonal.SuspendLayout();
             this.tbpEmpleados.SuspendLayout();
             this.gbxAccesos.SuspendLayout();
@@ -2172,7 +1654,7 @@ namespace gestorempresa.Views.Admin
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
@@ -2227,17 +1709,6 @@ namespace gestorempresa.Views.Admin
             this.tbpEmpleados.TabIndex = 0;
             this.tbpEmpleados.Text = "Empleados";
             // 
-            // lblListadoEmpleados
-            // 
-            this.lblListadoEmpleados.AutoSize = true;
-            this.lblListadoEmpleados.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblListadoEmpleados.ForeColor = System.Drawing.Color.Black;
-            this.lblListadoEmpleados.Location = new System.Drawing.Point(493, 22);
-            this.lblListadoEmpleados.Name = "lblListadoEmpleados";
-            this.lblListadoEmpleados.Size = new System.Drawing.Size(184, 25);
-            this.lblListadoEmpleados.TabIndex = 4;
-            this.lblListadoEmpleados.Text = "Listado de empleados";
-            // 
             // gbxAccesos
             // 
             this.gbxAccesos.BorderColor = System.Drawing.Color.Gainsboro;
@@ -2257,7 +1728,6 @@ namespace gestorempresa.Views.Admin
             this.gbxAccesos.Name = "gbxAccesos";
             this.gbxAccesos.Size = new System.Drawing.Size(446, 156);
             this.gbxAccesos.TabIndex = 3;
-            this.gbxAccesos.Text = "Gestión de accesos";
             // 
             // btnResetPassword
             // 
@@ -2286,7 +1756,7 @@ namespace gestorempresa.Views.Admin
             this.btnCambiarRol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(150)))), ((int)(((byte)(128)))));
             this.btnCambiarRol.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnCambiarRol.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarRol.Location = new System.Drawing.Point(227, 47);
+            this.btnCambiarRol.Location = new System.Drawing.Point(227, 37);
             this.btnCambiarRol.Name = "btnCambiarRol";
             this.btnCambiarRol.Size = new System.Drawing.Size(193, 38);
             this.btnCambiarRol.TabIndex = 4;
@@ -2318,7 +1788,7 @@ namespace gestorempresa.Views.Admin
             this.lblRol.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
             this.lblRol.Location = new System.Drawing.Point(14, 79);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(32, 21);
+            this.lblRol.Size = new System.Drawing.Size(33, 21);
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "Rol";
             // 
@@ -2326,7 +1796,7 @@ namespace gestorempresa.Views.Admin
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblPassword.Location = new System.Drawing.Point(14, 24);
+            this.lblPassword.Location = new System.Drawing.Point(14, 12);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(89, 21);
             this.lblPassword.TabIndex = 1;
@@ -2344,7 +1814,7 @@ namespace gestorempresa.Views.Admin
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(18, 47);
+            this.txtPassword.Location = new System.Drawing.Point(18, 37);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Nueva contraseña";
@@ -2375,7 +1845,6 @@ namespace gestorempresa.Views.Admin
             this.gbxFormularioEmpleado.Name = "gbxFormularioEmpleado";
             this.gbxFormularioEmpleado.Size = new System.Drawing.Size(446, 292);
             this.gbxFormularioEmpleado.TabIndex = 2;
-            this.gbxFormularioEmpleado.Text = "Mantenimiento de empleados";
             // 
             // btnLimpiarEmpleado
             // 
@@ -2392,6 +1861,7 @@ namespace gestorempresa.Views.Admin
             this.btnLimpiarEmpleado.Size = new System.Drawing.Size(193, 38);
             this.btnLimpiarEmpleado.TabIndex = 9;
             this.btnLimpiarEmpleado.Text = "Limpiar";
+            this.btnLimpiarEmpleado.Click += new System.EventHandler(this.btnLimpiarEmpleado_Click);
             // 
             // btnDarBajaEmpleado
             // 
@@ -2456,7 +1926,7 @@ namespace gestorempresa.Views.Admin
             this.txtApellidos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellidos.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellidos.Location = new System.Drawing.Point(18, 142);
+            this.txtApellidos.Location = new System.Drawing.Point(18, 150);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.PlaceholderText = "Apellidos";
@@ -2476,7 +1946,7 @@ namespace gestorempresa.Views.Admin
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(18, 93);
+            this.txtNombre.Location = new System.Drawing.Point(18, 89);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "Nombre";
@@ -2496,7 +1966,7 @@ namespace gestorempresa.Views.Admin
             this.txtNif.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNif.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNif.Location = new System.Drawing.Point(18, 44);
+            this.txtNif.Location = new System.Drawing.Point(18, 32);
             this.txtNif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNif.Name = "txtNif";
             this.txtNif.PlaceholderText = "NIF";
@@ -2508,9 +1978,9 @@ namespace gestorempresa.Views.Admin
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblApellidos.Location = new System.Drawing.Point(14, 118);
+            this.lblApellidos.Location = new System.Drawing.Point(14, 125);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(76, 21);
+            this.lblApellidos.Size = new System.Drawing.Size(74, 21);
             this.lblApellidos.TabIndex = 2;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -2518,7 +1988,7 @@ namespace gestorempresa.Views.Admin
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblNombre.Location = new System.Drawing.Point(14, 69);
+            this.lblNombre.Location = new System.Drawing.Point(14, 64);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 1;
@@ -2528,9 +1998,9 @@ namespace gestorempresa.Views.Admin
             // 
             this.lblNif.AutoSize = true;
             this.lblNif.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblNif.Location = new System.Drawing.Point(14, 20);
+            this.lblNif.Location = new System.Drawing.Point(14, 7);
             this.lblNif.Name = "lblNif";
-            this.lblNif.Size = new System.Drawing.Size(33, 21);
+            this.lblNif.Size = new System.Drawing.Size(34, 21);
             this.lblNif.TabIndex = 0;
             this.lblNif.Text = "NIF";
             // 
@@ -2538,34 +2008,34 @@ namespace gestorempresa.Views.Admin
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEmpleados.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(498, 57);
+            this.dgvEmpleados.Location = new System.Drawing.Point(498, 89);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 24;
-            this.dgvEmpleados.Size = new System.Drawing.Size(446, 430);
+            this.dgvEmpleados.Size = new System.Drawing.Size(446, 398);
             this.dgvEmpleados.TabIndex = 1;
             this.dgvEmpleados.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvEmpleados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -2603,7 +2073,7 @@ namespace gestorempresa.Views.Admin
             this.txtBuscarEmpleado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscarEmpleado.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscarEmpleado.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(498, 22);
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(498, 54);
             this.txtBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
             this.txtBuscarEmpleado.PlaceholderText = "Buscar por NIF, nombre o apellidos";
@@ -2632,7 +2102,7 @@ namespace gestorempresa.Views.Admin
             this.lblListadoEmpresas.ForeColor = System.Drawing.Color.Black;
             this.lblListadoEmpresas.Location = new System.Drawing.Point(493, 22);
             this.lblListadoEmpresas.Name = "lblListadoEmpresas";
-            this.lblListadoEmpresas.Size = new System.Drawing.Size(167, 25);
+            this.lblListadoEmpresas.Size = new System.Drawing.Size(175, 25);
             this.lblListadoEmpresas.TabIndex = 3;
             this.lblListadoEmpresas.Text = "Catálogo empresas";
             // 
@@ -2655,9 +2125,8 @@ namespace gestorempresa.Views.Admin
             this.gbxFormularioEmpresa.ForeColor = System.Drawing.Color.Black;
             this.gbxFormularioEmpresa.Location = new System.Drawing.Point(20, 22);
             this.gbxFormularioEmpresa.Name = "gbxFormularioEmpresa";
-            this.gbxFormularioEmpresa.Size = new System.Drawing.Size(446, 252);
+            this.gbxFormularioEmpresa.Size = new System.Drawing.Size(446, 281);
             this.gbxFormularioEmpresa.TabIndex = 2;
-            this.gbxFormularioEmpresa.Text = "Cartera de empresas";
             // 
             // btnLimpiarEmpresa
             // 
@@ -2669,11 +2138,12 @@ namespace gestorempresa.Views.Admin
             this.btnLimpiarEmpresa.FillColor = System.Drawing.Color.DimGray;
             this.btnLimpiarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnLimpiarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarEmpresa.Location = new System.Drawing.Point(227, 184);
+            this.btnLimpiarEmpresa.Location = new System.Drawing.Point(227, 214);
             this.btnLimpiarEmpresa.Name = "btnLimpiarEmpresa";
             this.btnLimpiarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnLimpiarEmpresa.TabIndex = 7;
             this.btnLimpiarEmpresa.Text = "Limpiar";
+            this.btnLimpiarEmpresa.Click += new System.EventHandler(this.btnLimpiarEmpresa_Click);
             // 
             // btnEliminarEmpresa
             // 
@@ -2685,7 +2155,7 @@ namespace gestorempresa.Views.Admin
             this.btnEliminarEmpresa.FillColor = System.Drawing.Color.IndianRed;
             this.btnEliminarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnEliminarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarEmpresa.Location = new System.Drawing.Point(18, 184);
+            this.btnEliminarEmpresa.Location = new System.Drawing.Point(18, 214);
             this.btnEliminarEmpresa.Name = "btnEliminarEmpresa";
             this.btnEliminarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnEliminarEmpresa.TabIndex = 6;
@@ -2702,7 +2172,7 @@ namespace gestorempresa.Views.Admin
             this.btnModificarEmpresa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(150)))), ((int)(((byte)(128)))));
             this.btnModificarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnModificarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnModificarEmpresa.Location = new System.Drawing.Point(227, 133);
+            this.btnModificarEmpresa.Location = new System.Drawing.Point(227, 154);
             this.btnModificarEmpresa.Name = "btnModificarEmpresa";
             this.btnModificarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnModificarEmpresa.TabIndex = 5;
@@ -2719,7 +2189,7 @@ namespace gestorempresa.Views.Admin
             this.btnCrearEmpresa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(46)))), ((int)(((byte)(80)))));
             this.btnCrearEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnCrearEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnCrearEmpresa.Location = new System.Drawing.Point(18, 133);
+            this.btnCrearEmpresa.Location = new System.Drawing.Point(18, 154);
             this.btnCrearEmpresa.Name = "btnCrearEmpresa";
             this.btnCrearEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnCrearEmpresa.TabIndex = 4;
@@ -2738,7 +2208,7 @@ namespace gestorempresa.Views.Admin
             this.txtCif.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCif.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCif.Location = new System.Drawing.Point(18, 93);
+            this.txtCif.Location = new System.Drawing.Point(18, 110);
             this.txtCif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCif.Name = "txtCif";
             this.txtCif.PlaceholderText = "CIF";
@@ -2758,7 +2228,7 @@ namespace gestorempresa.Views.Admin
             this.txtNombreEmpresa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreEmpresa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(18, 44);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(18, 45);
             this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
             this.txtNombreEmpresa.PlaceholderText = "Nombre empresa";
@@ -2770,9 +2240,9 @@ namespace gestorempresa.Views.Admin
             // 
             this.lblCif.AutoSize = true;
             this.lblCif.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblCif.Location = new System.Drawing.Point(14, 69);
+            this.lblCif.Location = new System.Drawing.Point(14, 85);
             this.lblCif.Name = "lblCif";
-            this.lblCif.Size = new System.Drawing.Size(31, 21);
+            this.lblCif.Size = new System.Drawing.Size(32, 21);
             this.lblCif.TabIndex = 1;
             this.lblCif.Text = "CIF";
             // 
@@ -2790,25 +2260,25 @@ namespace gestorempresa.Views.Admin
             // 
             this.dgvEmpresas.AllowUserToAddRows = false;
             this.dgvEmpresas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmpresas.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvEmpresas.Location = new System.Drawing.Point(498, 57);
             this.dgvEmpresas.MultiSelect = false;
@@ -2843,13 +2313,24 @@ namespace gestorempresa.Views.Admin
             this.dgvEmpresas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEmpresas.SelectionChanged += new System.EventHandler(this.dgvEmpresas_SelectionChanged);
             // 
-            // UC_Personal
+            // lblListadoEmpleados
+            // 
+            this.lblListadoEmpleados.AutoSize = true;
+            this.lblListadoEmpleados.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblListadoEmpleados.ForeColor = System.Drawing.Color.Black;
+            this.lblListadoEmpleados.Location = new System.Drawing.Point(493, 22);
+            this.lblListadoEmpleados.Name = "lblListadoEmpleados";
+            this.lblListadoEmpleados.Size = new System.Drawing.Size(197, 25);
+            this.lblListadoEmpleados.TabIndex = 4;
+            this.lblListadoEmpleados.Text = "Listado de empleados";
+            // 
+            // UCPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tbcPersonal);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "UC_Personal";
+            this.Name = "UCPersonal";
             this.Size = new System.Drawing.Size(1030, 648);
             this.Load += new System.EventHandler(this.UCPersonal_Load);
             this.tbcPersonal.ResumeLayout(false);
@@ -2878,9 +2359,6 @@ namespace gestorempresa.Views.Admin
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarEmpleado;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpleados;
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioEmpleado;
-        private System.Windows.Forms.Label lblNif;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblApellidos;
         private Guna.UI2.WinForms.Guna2TextBox txtNif;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidos;
@@ -2890,12 +2368,10 @@ namespace gestorempresa.Views.Admin
         private Guna.UI2.WinForms.Guna2Button btnLimpiarEmpleado;
         private Guna.UI2.WinForms.Guna2GroupBox gbxAccesos;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblRol;
         private Guna.UI2.WinForms.Guna2ComboBox cmbRol;
         private Guna.UI2.WinForms.Guna2Button btnCambiarRol;
         private Guna.UI2.WinForms.Guna2Button btnResetPassword;
-        private System.Windows.Forms.Label lblListadoEmpleados;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresas;
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioEmpresa;
         private System.Windows.Forms.Label lblNombreEmpresa;
@@ -2907,6 +2383,11 @@ namespace gestorempresa.Views.Admin
         private Guna.UI2.WinForms.Guna2Button btnEliminarEmpresa;
         private Guna.UI2.WinForms.Guna2Button btnLimpiarEmpresa;
         private System.Windows.Forms.Label lblListadoEmpresas;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblApellidos;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNif;
+        private System.Windows.Forms.Label lblListadoEmpleados;
     }
 }
 
@@ -3271,10 +2752,16 @@ namespace gestor_empresa
         // Lógica SQL que obtiene las nóminas totales de un empleado
         public DataTable ObtenerNominasPorEmpleado(int idEmpleado)
         {
-            string sql = "SELECT n.id_nomina AS ID, n.mes AS Mes, n.anyo AS Año, n.salario_bruto AS Bruto, n.salario_neto AS Neto " +
-                         "FROM nomina n " +
-                         "INNER JOIN contrato c ON n.id_contrato = c.id_contrato " +
-                         "WHERE c.id_empleado = @idEmpleado";
+            string sql = @"SELECT 
+                            n.id_nomina AS ID,
+                            n.mes AS Mes,
+                            n.anyo AS Año,
+                            n.salario_bruto AS Bruto,
+                            n.salario_neto AS Neto
+                            FROM nomina n
+                            INNER JOIN contrato c ON n.id_contrato = c.id_contrato
+                            WHERE c.id_empleado = @idEmpleado
+                            ORDER BY n.anyo DESC, n.mes DESC";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -3288,10 +2775,16 @@ namespace gestor_empresa
         // Lógica SQL que obtiene las bajas totales de un empleado
         public DataTable ObtenerBajasPorEmpleado(int idEmpleado)
         {
-            string sql = "SELECT b.id_baja AS ID, b.fecha_inicio AS Inicio, b.fecha_fin AS Final, b.motivo AS Motivo, b.prestacion AS Prestación " +
-                         "FROM baja b " +
-                         "INNER JOIN contrato c ON b.id_contrato = c.id_contrato " +
-                         "WHERE c.id_empleado = @idEmpleado";
+            string sql = @"SELECT 
+                            b.id_baja AS ID,
+                            b.fecha_inicio AS Inicio,
+                            b.fecha_fin AS Final,
+                            b.motivo AS Motivo,
+                            b.prestacion AS Prestación
+                            FROM baja b
+                            INNER JOIN contrato c ON b.id_contrato = c.id_contrato
+                            WHERE c.id_empleado = @idEmpleado
+                            ORDER BY b.fecha_inicio DESC";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -3306,11 +2799,13 @@ namespace gestor_empresa
         public DataTable ObtenerRegistroAbierto(int empleadoId)
         {
             string fechaHoy = DateTime.Today.ToString("yyyy-MM-dd");
-            string sql = "SELECT j.* FROM jornada j " +
-                      "INNER JOIN contrato c ON j.id_contrato = c.id_contrato " +
-                      "WHERE c.id_empleado = @idEmpleado " +
-                      "AND j.hora_salida IS NULL " +
-                      "AND j.fecha = @fechaHoy";
+
+            string sql = @"SELECT j.*
+                           FROM jornada j
+                           INNER JOIN contrato c ON j.id_contrato = c.id_contrato
+                           WHERE c.id_empleado = @idEmpleado
+                           AND j.hora_salida IS NULL
+                           AND j.fecha = @fechaHoy";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -3321,15 +2816,20 @@ namespace gestor_empresa
             return Database.Consulta(sql, parametros);
         }
 
-        // Lógica SQL para cuando pulse el botón el usuario y no haya una jornada activa (fichar)
+        // Lógica SQL para cuando pulse el botón el usuario y no haya una jornada activa fichar
         public int InsertarEntrada(int empleadoId)
         {
             string fechaHoy = DateTime.Today.ToString("yyyy-MM-dd");
             string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            string sql = "INSERT INTO jornada (id_contrato, fecha, hora_entrada) " +
-                     "SELECT id_contrato, @fechaHoy, @horaActual " +
-                     "FROM contrato WHERE id_empleado = @idEmpleado " +
-                     "AND estado = 'activo' LIMIT 1";
+
+            string sql = @"INSERT INTO 
+                            jornada (id_contrato, fecha, hora_entrada)
+                            SELECT id_contrato, @fechaHoy, @horaActual
+                            FROM contrato
+                            WHERE id_empleado = @idEmpleado
+                            AND estado = 'activo'
+                            ORDER BY id_contrato DESC
+                            LIMIT 1";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -3341,11 +2841,14 @@ namespace gestor_empresa
             return Database.Modificacion(sql, parametros);
         }
 
-        // Lógica SQL para cuando pulse el botón el usuario y haya una jornada activa (terminar la jornada)
+        // Lógica SQL para cuando pulse el botón el usuario y haya una jornada activa terminar la jornada
         public int ActualizarSalida(int jornadaId)
         {
             string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            string sql = "UPDATE jornada SET hora_salida = @horaActual WHERE id_jornada = @idJornada";
+
+            string sql = @"UPDATE jornada
+                            SET hora_salida = @horaActual
+                            WHERE id_jornada = @idJornada";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -3510,128 +3013,16 @@ namespace gestor_empresa
 
 
 --- CLASE: GestorUCPersonal.cs ---
+using gestor_empresa;
 using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
-namespace gestor_empresa
+namespace gestorempresa
 {
     class GestorUCPersonal
     {
-        // -- EMPLEADOS ------------------------------------------------
-
-        public DataTable ObtenerTodosEmpleados()
-        {
-            string sql = "SELECT id_empleado, nif, nombre, apellidos, rol FROM empleado ORDER BY apellidos, nombre";
-            return Database.Consulta(sql);
-        }
-
-        public DataTable BuscarEmpleados(string filtro)
-        {
-            string sql = @"SELECT id_empleado, nif, nombre, apellidos, rol 
-                           FROM empleado 
-                           WHERE nif LIKE @filtro OR nombre LIKE @filtro OR apellidos LIKE @filtro
-                           ORDER BY apellidos, nombre";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@filtro", "%" + filtro + "%")
-            };
-            return Database.Consulta(sql, p);
-        }
-
-        public int InsertarEmpleado(string nif, string nombre, string apellidos, string password, string rol)
-        {
-            string sql = @"INSERT INTO empleado (nif, nombre, apellidos, password, rol) 
-                           VALUES (@nif, @nombre, @apellidos, @password, @rol)";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@nif", nif),
-                new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@apellidos", apellidos),
-                new MySqlParameter("@password", password),
-                new MySqlParameter("@rol", rol)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        public int ModificarEmpleado(int idEmpleado, string nif, string nombre, string apellidos, string rol)
-        {
-            string sql = @"UPDATE empleado SET nif=@nif, nombre=@nombre, apellidos=@apellidos, rol=@rol
-                           WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@id", idEmpleado),
-                new MySqlParameter("@nif", nif),
-                new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@apellidos", apellidos),
-                new MySqlParameter("@rol", rol)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        /// <summary>Da de baja lógica: pone a inactivo todos los contratos del empleado.</summary>
-        public int DarDeBajaEmpleado(int idEmpleado)
-        {
-            string sql = "UPDATE contrato SET estado='inactivo' WHERE id_empleado=@id";
-            var p = new MySqlParameter[] { new MySqlParameter("@id", idEmpleado) };
-            return Database.Modificacion(sql, p);
-        }
-
-        // -- ACCESOS --------------------------------------------------
-
-        public int CambiarRol(int idEmpleado, string nuevoRol)
-        {
-            string sql = "UPDATE empleado SET rol=@rol WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@rol", nuevoRol),
-                new MySqlParameter("@id",  idEmpleado)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        public int ResetearPassword(int idEmpleado, string nuevaPassword)
-        {
-            string sql = "UPDATE empleado SET password=@pw WHERE id_empleado=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@pw", nuevaPassword),
-                new MySqlParameter("@id", idEmpleado)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        // -- EMPRESAS -------------------------------------------------
-
-        public DataTable ObtenerTodasEmpresas()
-        {
-            string sql = "SELECT id_empresa, nombre, cif FROM empresa ORDER BY nombre";
-            return Database.Consulta(sql);
-        }
-
-        public int InsertarEmpresa(string nombre, string cif)
-        {
-            string sql = "INSERT INTO empresa (nombre, cif) VALUES (@nombre, @cif)";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@cif",    cif)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        public int ModificarEmpresa(int idEmpresa, string nombre, string cif)
-        {
-            string sql = "UPDATE empresa SET nombre=@nombre, cif=@cif WHERE id_empresa=@id";
-            var p = new MySqlParameter[] {
-                new MySqlParameter("@nombre", nombre),
-                new MySqlParameter("@cif",    cif),
-                new MySqlParameter("@id",     idEmpresa)
-            };
-            return Database.Modificacion(sql, p);
-        }
-
-        public int EliminarEmpresa(int idEmpresa)
-        {
-            // Solo elimina si no tiene contratos asociados
-            string sql = @"DELETE FROM empresa WHERE id_empresa=@id 
-                           AND id_empresa NOT IN (SELECT id_empresa FROM contrato)";
-            var p = new MySqlParameter[] { new MySqlParameter("@id", idEmpresa) };
-            return Database.Modificacion(sql, p);
-        }
+        
     }
 }
 

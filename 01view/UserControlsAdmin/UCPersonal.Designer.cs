@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tbcPersonal = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpEmpleados = new System.Windows.Forms.TabPage();
-            this.lblListadoEmpleados = new System.Windows.Forms.Label();
             this.gbxAccesos = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnResetPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnCambiarRol = new Guna.UI2.WinForms.Guna2Button();
@@ -70,6 +69,7 @@
             this.lblCif = new System.Windows.Forms.Label();
             this.lblNombreEmpresa = new System.Windows.Forms.Label();
             this.dgvEmpresas = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lblListadoEmpleados = new System.Windows.Forms.Label();
             this.tbcPersonal.SuspendLayout();
             this.tbpEmpleados.SuspendLayout();
             this.gbxAccesos.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
@@ -137,17 +137,6 @@
             this.tbpEmpleados.TabIndex = 0;
             this.tbpEmpleados.Text = "Empleados";
             // 
-            // lblListadoEmpleados
-            // 
-            this.lblListadoEmpleados.AutoSize = true;
-            this.lblListadoEmpleados.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lblListadoEmpleados.ForeColor = System.Drawing.Color.Black;
-            this.lblListadoEmpleados.Location = new System.Drawing.Point(493, 22);
-            this.lblListadoEmpleados.Name = "lblListadoEmpleados";
-            this.lblListadoEmpleados.Size = new System.Drawing.Size(184, 25);
-            this.lblListadoEmpleados.TabIndex = 4;
-            this.lblListadoEmpleados.Text = "Listado de empleados";
-            // 
             // gbxAccesos
             // 
             this.gbxAccesos.BorderColor = System.Drawing.Color.Gainsboro;
@@ -167,7 +156,6 @@
             this.gbxAccesos.Name = "gbxAccesos";
             this.gbxAccesos.Size = new System.Drawing.Size(446, 156);
             this.gbxAccesos.TabIndex = 3;
-            this.gbxAccesos.Text = "Gestión de accesos";
             // 
             // btnResetPassword
             // 
@@ -196,7 +184,7 @@
             this.btnCambiarRol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(150)))), ((int)(((byte)(128)))));
             this.btnCambiarRol.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnCambiarRol.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarRol.Location = new System.Drawing.Point(227, 47);
+            this.btnCambiarRol.Location = new System.Drawing.Point(227, 37);
             this.btnCambiarRol.Name = "btnCambiarRol";
             this.btnCambiarRol.Size = new System.Drawing.Size(193, 38);
             this.btnCambiarRol.TabIndex = 4;
@@ -228,7 +216,7 @@
             this.lblRol.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
             this.lblRol.Location = new System.Drawing.Point(14, 79);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(32, 21);
+            this.lblRol.Size = new System.Drawing.Size(33, 21);
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "Rol";
             // 
@@ -236,7 +224,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblPassword.Location = new System.Drawing.Point(14, 24);
+            this.lblPassword.Location = new System.Drawing.Point(14, 12);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(89, 21);
             this.lblPassword.TabIndex = 1;
@@ -254,7 +242,7 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(18, 47);
+            this.txtPassword.Location = new System.Drawing.Point(18, 37);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Nueva contraseña";
@@ -285,7 +273,6 @@
             this.gbxFormularioEmpleado.Name = "gbxFormularioEmpleado";
             this.gbxFormularioEmpleado.Size = new System.Drawing.Size(446, 292);
             this.gbxFormularioEmpleado.TabIndex = 2;
-            this.gbxFormularioEmpleado.Text = "Mantenimiento de empleados";
             // 
             // btnLimpiarEmpleado
             // 
@@ -302,6 +289,7 @@
             this.btnLimpiarEmpleado.Size = new System.Drawing.Size(193, 38);
             this.btnLimpiarEmpleado.TabIndex = 9;
             this.btnLimpiarEmpleado.Text = "Limpiar";
+            this.btnLimpiarEmpleado.Click += new System.EventHandler(this.btnLimpiarEmpleado_Click);
             // 
             // btnDarBajaEmpleado
             // 
@@ -366,7 +354,7 @@
             this.txtApellidos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellidos.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellidos.Location = new System.Drawing.Point(18, 142);
+            this.txtApellidos.Location = new System.Drawing.Point(18, 150);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.PlaceholderText = "Apellidos";
@@ -386,7 +374,7 @@
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(18, 93);
+            this.txtNombre.Location = new System.Drawing.Point(18, 89);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "Nombre";
@@ -406,7 +394,7 @@
             this.txtNif.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNif.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNif.Location = new System.Drawing.Point(18, 44);
+            this.txtNif.Location = new System.Drawing.Point(18, 32);
             this.txtNif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNif.Name = "txtNif";
             this.txtNif.PlaceholderText = "NIF";
@@ -418,9 +406,9 @@
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblApellidos.Location = new System.Drawing.Point(14, 118);
+            this.lblApellidos.Location = new System.Drawing.Point(14, 125);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(76, 21);
+            this.lblApellidos.Size = new System.Drawing.Size(74, 21);
             this.lblApellidos.TabIndex = 2;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -428,7 +416,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblNombre.Location = new System.Drawing.Point(14, 69);
+            this.lblNombre.Location = new System.Drawing.Point(14, 64);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 1;
@@ -438,9 +426,9 @@
             // 
             this.lblNif.AutoSize = true;
             this.lblNif.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblNif.Location = new System.Drawing.Point(14, 20);
+            this.lblNif.Location = new System.Drawing.Point(14, 7);
             this.lblNif.Name = "lblNif";
-            this.lblNif.Size = new System.Drawing.Size(33, 21);
+            this.lblNif.Size = new System.Drawing.Size(34, 21);
             this.lblNif.TabIndex = 0;
             this.lblNif.Text = "NIF";
             // 
@@ -448,34 +436,34 @@
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEmpleados.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(498, 57);
+            this.dgvEmpleados.Location = new System.Drawing.Point(498, 89);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 24;
-            this.dgvEmpleados.Size = new System.Drawing.Size(446, 430);
+            this.dgvEmpleados.Size = new System.Drawing.Size(446, 398);
             this.dgvEmpleados.TabIndex = 1;
             this.dgvEmpleados.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvEmpleados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -513,7 +501,7 @@
             this.txtBuscarEmpleado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscarEmpleado.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscarEmpleado.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(498, 22);
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(498, 54);
             this.txtBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
             this.txtBuscarEmpleado.PlaceholderText = "Buscar por NIF, nombre o apellidos";
@@ -542,7 +530,7 @@
             this.lblListadoEmpresas.ForeColor = System.Drawing.Color.Black;
             this.lblListadoEmpresas.Location = new System.Drawing.Point(493, 22);
             this.lblListadoEmpresas.Name = "lblListadoEmpresas";
-            this.lblListadoEmpresas.Size = new System.Drawing.Size(167, 25);
+            this.lblListadoEmpresas.Size = new System.Drawing.Size(175, 25);
             this.lblListadoEmpresas.TabIndex = 3;
             this.lblListadoEmpresas.Text = "Catálogo empresas";
             // 
@@ -565,9 +553,8 @@
             this.gbxFormularioEmpresa.ForeColor = System.Drawing.Color.Black;
             this.gbxFormularioEmpresa.Location = new System.Drawing.Point(20, 22);
             this.gbxFormularioEmpresa.Name = "gbxFormularioEmpresa";
-            this.gbxFormularioEmpresa.Size = new System.Drawing.Size(446, 252);
+            this.gbxFormularioEmpresa.Size = new System.Drawing.Size(446, 281);
             this.gbxFormularioEmpresa.TabIndex = 2;
-            this.gbxFormularioEmpresa.Text = "Cartera de empresas";
             // 
             // btnLimpiarEmpresa
             // 
@@ -579,11 +566,12 @@
             this.btnLimpiarEmpresa.FillColor = System.Drawing.Color.DimGray;
             this.btnLimpiarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnLimpiarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarEmpresa.Location = new System.Drawing.Point(227, 184);
+            this.btnLimpiarEmpresa.Location = new System.Drawing.Point(227, 214);
             this.btnLimpiarEmpresa.Name = "btnLimpiarEmpresa";
             this.btnLimpiarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnLimpiarEmpresa.TabIndex = 7;
             this.btnLimpiarEmpresa.Text = "Limpiar";
+            this.btnLimpiarEmpresa.Click += new System.EventHandler(this.btnLimpiarEmpresa_Click);
             // 
             // btnEliminarEmpresa
             // 
@@ -595,7 +583,7 @@
             this.btnEliminarEmpresa.FillColor = System.Drawing.Color.IndianRed;
             this.btnEliminarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnEliminarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarEmpresa.Location = new System.Drawing.Point(18, 184);
+            this.btnEliminarEmpresa.Location = new System.Drawing.Point(18, 214);
             this.btnEliminarEmpresa.Name = "btnEliminarEmpresa";
             this.btnEliminarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnEliminarEmpresa.TabIndex = 6;
@@ -612,7 +600,7 @@
             this.btnModificarEmpresa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(150)))), ((int)(((byte)(128)))));
             this.btnModificarEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnModificarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnModificarEmpresa.Location = new System.Drawing.Point(227, 133);
+            this.btnModificarEmpresa.Location = new System.Drawing.Point(227, 154);
             this.btnModificarEmpresa.Name = "btnModificarEmpresa";
             this.btnModificarEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnModificarEmpresa.TabIndex = 5;
@@ -629,7 +617,7 @@
             this.btnCrearEmpresa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(46)))), ((int)(((byte)(80)))));
             this.btnCrearEmpresa.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.btnCrearEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnCrearEmpresa.Location = new System.Drawing.Point(18, 133);
+            this.btnCrearEmpresa.Location = new System.Drawing.Point(18, 154);
             this.btnCrearEmpresa.Name = "btnCrearEmpresa";
             this.btnCrearEmpresa.Size = new System.Drawing.Size(193, 38);
             this.btnCrearEmpresa.TabIndex = 4;
@@ -648,7 +636,7 @@
             this.txtCif.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCif.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCif.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCif.Location = new System.Drawing.Point(18, 93);
+            this.txtCif.Location = new System.Drawing.Point(18, 110);
             this.txtCif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCif.Name = "txtCif";
             this.txtCif.PlaceholderText = "CIF";
@@ -668,7 +656,7 @@
             this.txtNombreEmpresa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreEmpresa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(18, 44);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(18, 45);
             this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
             this.txtNombreEmpresa.PlaceholderText = "Nombre empresa";
@@ -680,9 +668,9 @@
             // 
             this.lblCif.AutoSize = true;
             this.lblCif.Font = new System.Drawing.Font("Yu Gothic UI", 9.5F);
-            this.lblCif.Location = new System.Drawing.Point(14, 69);
+            this.lblCif.Location = new System.Drawing.Point(14, 85);
             this.lblCif.Name = "lblCif";
-            this.lblCif.Size = new System.Drawing.Size(31, 21);
+            this.lblCif.Size = new System.Drawing.Size(32, 21);
             this.lblCif.TabIndex = 1;
             this.lblCif.Text = "CIF";
             // 
@@ -700,25 +688,25 @@
             // 
             this.dgvEmpresas.AllowUserToAddRows = false;
             this.dgvEmpresas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmpresas.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvEmpresas.Location = new System.Drawing.Point(498, 57);
             this.dgvEmpresas.MultiSelect = false;
@@ -753,13 +741,24 @@
             this.dgvEmpresas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEmpresas.SelectionChanged += new System.EventHandler(this.dgvEmpresas_SelectionChanged);
             // 
-            // UC_Personal
+            // lblListadoEmpleados
+            // 
+            this.lblListadoEmpleados.AutoSize = true;
+            this.lblListadoEmpleados.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblListadoEmpleados.ForeColor = System.Drawing.Color.Black;
+            this.lblListadoEmpleados.Location = new System.Drawing.Point(493, 22);
+            this.lblListadoEmpleados.Name = "lblListadoEmpleados";
+            this.lblListadoEmpleados.Size = new System.Drawing.Size(197, 25);
+            this.lblListadoEmpleados.TabIndex = 4;
+            this.lblListadoEmpleados.Text = "Listado de empleados";
+            // 
+            // UCPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tbcPersonal);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "UC_Personal";
+            this.Name = "UCPersonal";
             this.Size = new System.Drawing.Size(1030, 648);
             this.Load += new System.EventHandler(this.UCPersonal_Load);
             this.tbcPersonal.ResumeLayout(false);
@@ -788,9 +787,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarEmpleado;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpleados;
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioEmpleado;
-        private System.Windows.Forms.Label lblNif;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblApellidos;
         private Guna.UI2.WinForms.Guna2TextBox txtNif;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidos;
@@ -800,12 +796,10 @@
         private Guna.UI2.WinForms.Guna2Button btnLimpiarEmpleado;
         private Guna.UI2.WinForms.Guna2GroupBox gbxAccesos;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblRol;
         private Guna.UI2.WinForms.Guna2ComboBox cmbRol;
         private Guna.UI2.WinForms.Guna2Button btnCambiarRol;
         private Guna.UI2.WinForms.Guna2Button btnResetPassword;
-        private System.Windows.Forms.Label lblListadoEmpleados;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresas;
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioEmpresa;
         private System.Windows.Forms.Label lblNombreEmpresa;
@@ -817,5 +811,10 @@
         private Guna.UI2.WinForms.Guna2Button btnEliminarEmpresa;
         private Guna.UI2.WinForms.Guna2Button btnLimpiarEmpresa;
         private System.Windows.Forms.Label lblListadoEmpresas;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblApellidos;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNif;
+        private System.Windows.Forms.Label lblListadoEmpleados;
     }
 }
