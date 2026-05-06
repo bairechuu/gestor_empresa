@@ -26,7 +26,7 @@ namespace gestor_empresa
         */
         private void btnGestPersonal_Click(object sender, EventArgs e)
         {
-            UCPersonal UCPersonal = new UCPersonal();
+            UC_Personal UCPersonal = new UC_Personal();
             pnlCentral.Controls.Clear();
             UCPersonal.Dock = DockStyle.Fill;
             pnlCentral.Controls.Add(UCPersonal);

@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace gestorempresa.Views.Admin
 {
-    public partial class UCPersonal : UserControl
+    public partial class UC_Personal : UserControl
     {
         private GestorUCPersonal gestor = new GestorUCPersonal();
         private string nifSeleccionado = "";
         private string cifSeleccionado = "";
 
-        public UCPersonal()
+        public UC_Personal()
         {
             InitializeComponent();
         }

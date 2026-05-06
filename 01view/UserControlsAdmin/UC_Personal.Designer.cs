@@ -1,6 +1,6 @@
 ﻿namespace gestorempresa.Views.Admin
 {
-    partial class UCPersonal
+    partial class UC_Personal
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

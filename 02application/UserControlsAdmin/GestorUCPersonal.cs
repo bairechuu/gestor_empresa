@@ -1,6 +1,5 @@
 ﻿using gestor_empresa;
 using MySql.Data.MySqlClient;
-using System;
 using System.Data;
 
 namespace gestorempresa

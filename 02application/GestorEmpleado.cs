@@ -1,10 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestor_empresa
 {
@@ -13,7 +9,8 @@ namespace gestor_empresa
         // Lógica SQL que obtiene las nóminas totales de un empleado
         public DataTable ObtenerNominasPorEmpleado(int idEmpleado)
         {
-            string sql = @"SELECT 
+            string sql = @"
+                            SELECT 
                             n.id_nomina AS ID,
                             n.mes AS Mes,
                             n.anyo AS Año,
@@ -36,7 +33,8 @@ namespace gestor_empresa
         // Lógica SQL que obtiene las bajas totales de un empleado
         public DataTable ObtenerBajasPorEmpleado(int idEmpleado)
         {
-            string sql = @"SELECT 
+            string sql = @"
+                            SELECT 
                             b.id_baja AS ID,
                             b.fecha_inicio AS Inicio,
                             b.fecha_fin AS Final,
@@ -61,12 +59,13 @@ namespace gestor_empresa
         {
             string fechaHoy = DateTime.Today.ToString("yyyy-MM-dd");
 
-            string sql = @"SELECT j.*
-                           FROM jornada j
-                           INNER JOIN contrato c ON j.id_contrato = c.id_contrato
-                           WHERE c.id_empleado = @idEmpleado
-                           AND j.hora_salida IS NULL
-                           AND j.fecha = @fechaHoy";
+            string sql = @"
+                            SELECT j.*
+                            FROM jornada j
+                            INNER JOIN contrato c ON j.id_contrato = c.id_contrato
+                            WHERE c.id_empleado = @idEmpleado
+                            AND j.hora_salida IS NULL
+                            AND j.fecha = @fechaHoy";
 
             MySqlParameter[] parametros = new MySqlParameter[]
             {
@@ -83,7 +82,8 @@ namespace gestor_empresa
             string fechaHoy = DateTime.Today.ToString("yyyy-MM-dd");
             string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            string sql = @"INSERT INTO 
+            string sql = @"
+                            INSERT INTO 
                             jornada (id_contrato, fecha, hora_entrada)
                             SELECT id_contrato, @fechaHoy, @horaActual
                             FROM contrato
@@ -107,7 +107,8 @@ namespace gestor_empresa
         {
             string horaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            string sql = @"UPDATE jornada
+            string sql = @"
+                            UPDATE jornada
                             SET hora_salida = @horaActual
                             WHERE id_jornada = @idJornada";
 
