@@ -26,6 +26,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tbcLaboral = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpContratos = new System.Windows.Forms.TabPage();
@@ -49,6 +52,8 @@
             this.btnModificarContrato = new Guna.UI2.WinForms.Guna2Button();
             this.btnCrearContrato = new Guna.UI2.WinForms.Guna2Button();
             this.dgvContratos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtBuscarEmpresas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dgvEmpresas = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tbpIncapacidades = new System.Windows.Forms.TabPage();
             this.gbxFormularioBaja = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtPrestacion = new Guna.UI2.WinForms.Guna2TextBox();
@@ -85,6 +90,7 @@
             this.tbpContratos.SuspendLayout();
             this.gbxFormularioContrato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             this.tbpIncapacidades.SuspendLayout();
             this.gbxFormularioBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajas)).BeginInit();
@@ -124,6 +130,8 @@
             this.tbcLaboral.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
 
             this.tbpContratos.BackColor = System.Drawing.Color.White;
+            this.tbpContratos.Controls.Add(this.txtBuscarEmpresas);
+            this.tbpContratos.Controls.Add(this.dgvEmpresas);
             this.tbpContratos.Controls.Add(this.txtBuscarContratos);
             this.tbpContratos.Controls.Add(this.gbxFormularioContrato);
             this.tbpContratos.Controls.Add(this.dgvContratos);
@@ -137,7 +145,7 @@
             this.txtBuscarContratos.BorderRadius = 10;
             this.txtBuscarContratos.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscarContratos.DefaultText = "";
-            this.txtBuscarContratos.Location = new System.Drawing.Point(498, 54);
+            this.txtBuscarContratos.Location = new System.Drawing.Point(498, 22);
             this.txtBuscarContratos.Name = "txtBuscarContratos";
             this.txtBuscarContratos.PlaceholderText = "Buscar contrato...";
             this.txtBuscarContratos.Size = new System.Drawing.Size(446, 28);
@@ -330,13 +338,49 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvContratos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvContratos.Location = new System.Drawing.Point(498, 89);
+            this.dgvContratos.Location = new System.Drawing.Point(498, 56);
             this.dgvContratos.Name = "dgvContratos";
             this.dgvContratos.ReadOnly = true;
             this.dgvContratos.RowHeadersVisible = false;
-            this.dgvContratos.Size = new System.Drawing.Size(446, 398);
+            this.dgvContratos.Size = new System.Drawing.Size(446, 190);
             this.dgvContratos.TabIndex = 1;
             this.dgvContratos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
+
+            this.txtBuscarEmpresas.BorderRadius = 10;
+            this.txtBuscarEmpresas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarEmpresas.DefaultText = "";
+            this.txtBuscarEmpresas.Location = new System.Drawing.Point(498, 260);
+            this.txtBuscarEmpresas.Name = "txtBuscarEmpresas";
+            this.txtBuscarEmpresas.PlaceholderText = "Buscar empresa...";
+            this.txtBuscarEmpresas.Size = new System.Drawing.Size(446, 28);
+            this.txtBuscarEmpresas.TabIndex = 22;
+
+            this.dgvEmpresas.AllowUserToAddRows = false;
+            this.dgvEmpresas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvEmpresas.ColumnHeadersHeight = 32;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvEmpresas.Location = new System.Drawing.Point(498, 294);
+            this.dgvEmpresas.Name = "dgvEmpresas";
+            this.dgvEmpresas.ReadOnly = true;
+            this.dgvEmpresas.RowHeadersVisible = false;
+            this.dgvEmpresas.Size = new System.Drawing.Size(446, 193);
+            this.dgvEmpresas.TabIndex = 23;
+            this.dgvEmpresas.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
 
             this.tbpIncapacidades.BackColor = System.Drawing.Color.White;
             this.tbpIncapacidades.Controls.Add(this.gbxFormularioBaja);
@@ -685,6 +729,7 @@
             this.gbxFormularioContrato.ResumeLayout(false);
             this.gbxFormularioContrato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
             this.tbpIncapacidades.ResumeLayout(false);
             this.gbxFormularioBaja.ResumeLayout(false);
             this.gbxFormularioBaja.PerformLayout();
@@ -707,6 +752,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarContratos;
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioContrato;
         private Guna.UI2.WinForms.Guna2DataGridView dgvContratos;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresas;
+        private Guna.UI2.WinForms.Guna2TextBox txtBuscarEmpresas;
         private Guna.UI2.WinForms.Guna2Button btnLimpiarContrato;
         private Guna.UI2.WinForms.Guna2Button btnModificarContrato;
         private Guna.UI2.WinForms.Guna2Button btnCrearContrato;
