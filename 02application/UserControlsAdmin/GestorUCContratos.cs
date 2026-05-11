@@ -21,6 +21,55 @@ namespace gestorempresa
             return Database.Consulta(sql);
         }
 
+        public DataTable ObtenerEmpleados()
+        {
+            string sql = "SELECT id_empleado, nombre, apellidos, nif FROM empleado";
+            return Database.Consulta(sql);
+        }
+
+        public DataTable BuscarEmpleados(string filtro)
+        {
+            string sql = "SELECT id_empleado, nombre, apellidos, nif FROM empleado WHERE id_empleado LIKE @filtro OR nombre LIKE @filtro OR apellidos LIKE @filtro OR nif LIKE @filtro";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@filtro", "%" + filtro + "%")
+            };
+            return Database.Consulta(sql, parametros);
+        }
+
+        public DataTable ObtenerContratosInfo()
+        {
+            string sql = @"
+                SELECT c.id_contrato, e.nombre, e.apellidos, c.fecha_inicio, c.estado 
+                FROM contrato c
+                INNER JOIN empleado e ON c.id_empleado = e.id_empleado";
+            return Database.Consulta(sql);
+        }
+
+        public DataTable BuscarContratosInfo(string filtro)
+        {
+            string sql = @"
+                SELECT c.id_contrato, e.nombre, e.apellidos, c.fecha_inicio, c.estado 
+                FROM contrato c
+                INNER JOIN empleado e ON c.id_empleado = e.id_empleado
+                WHERE c.id_contrato LIKE @filtro OR e.nombre LIKE @filtro OR e.apellidos LIKE @filtro OR c.estado LIKE @filtro";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@filtro", "%" + filtro + "%")
+            };
+            return Database.Consulta(sql, parametros);
+        }
+
+        public DataTable ObtenerContratoActivoPorEmpleado(int idEmpleado)
+        {
+            string sql = "SELECT * FROM contrato WHERE id_empleado = @id_empleado ORDER BY fecha_inicio DESC LIMIT 1";
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@id_empleado", idEmpleado)
+            };
+            return Database.Consulta(sql, parametros);
+        }
+
         public DataTable BuscarEmpresas(string filtro)
         {
             string sql = "SELECT id_empresa, cif, nombre FROM empresa WHERE id_empresa LIKE @filtro OR cif LIKE @filtro OR nombre LIKE @filtro";

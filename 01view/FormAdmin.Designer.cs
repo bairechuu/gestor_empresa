@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlArriba = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlIzq = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogOff = new Guna.UI2.WinForms.Guna2Button();
@@ -45,6 +46,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tlpIzq = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCentral = new System.Windows.Forms.Panel();
+            this.dgcDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlArriba.SuspendLayout();
             this.pnlIzq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpbImg)).BeginInit();
@@ -339,6 +341,13 @@
             this.pnlCentral.Size = new System.Drawing.Size(1030, 648);
             this.pnlCentral.TabIndex = 3;
             // 
+            // dgcDrag
+            // 
+            this.dgcDrag.DockIndicatorTransparencyValue = 0.6D;
+            this.dgcDrag.DragStartTransparencyValue = 1D;
+            this.dgcDrag.TargetControl = this.pnlArriba;
+            this.dgcDrag.UseTransparentDrag = true;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,5 +389,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TableLayoutPanel tlpIzq;
         private System.Windows.Forms.Panel pnlCentral;
+        private Guna.UI2.WinForms.Guna2DragControl dgcDrag;
     }
 }

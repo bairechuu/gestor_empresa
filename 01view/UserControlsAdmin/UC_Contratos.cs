@@ -14,36 +14,43 @@ namespace gestorempresa.Views.Admin
         {
             InitializeComponent();
             gestorContratos = new GestorUCContratos();
-
-            // Asignar eventos a los botones y dgv
-            btnCrearContrato.Click += BtnCrearContrato_Click;
-            btnModificarContrato.Click += BtnModificarContrato_Click;
-            btnLimpiarContrato.Click += BtnLimpiarContrato_Click;
-            dgvContratos.CellClick += DgvContratos_CellClick;
-            txtBuscarContratos.TextChanged += TxtBuscarContratos_TextChanged;
-
-            // Asignar eventos para empresas
-            dgvEmpresas.CellClick += DgvEmpresas_CellClick;
-            txtBuscarEmpresas.TextChanged += TxtBuscarEmpresas_TextChanged;
         }
+
+        private void MostrarMensajeDesarrollo(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funcionalidad en desarrollo.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
 
         private void UC_Contratos_Load(object sender, EventArgs e)
         {
-            CargarContratos();
+            CargarEmpleados();
             CargarEmpresas();
+            CargarContratosInfo();
             LimpiarFormularioContrato();
         }
 
-        private void CargarContratos()
+        private void CargarEmpleados()
         {
-            DataTable dt = gestorContratos.ObtenerContratos();
+            DataTable dt = gestorContratos.ObtenerEmpleados();
             if (dt != null)
             {
-                dgvContratos.DataSource = dt;
+                dgvEmpleados.DataSource = dt;
             }
             else
             {
-                MessageBox.Show("Error al cargar contratos: " + gestorContratos.ObtenerError(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar empleados: " + gestorContratos.ObtenerError(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarContratosInfo()
+        {
+            DataTable dt = gestorContratos.ObtenerContratosInfo();
+            if (dt != null)
+            {
+                dgvContratosBaja.DataSource = dt;
+                dgvContratosFiniquito.DataSource = dt;
             }
         }
 
@@ -60,13 +67,25 @@ namespace gestorempresa.Views.Admin
             }
         }
 
-        private void TxtBuscarContratos_TextChanged(object sender, EventArgs e)
+        private void TxtBuscarEmpleados_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = gestorContratos.BuscarContratos(txtBuscarContratos.Text);
+            DataTable dt = gestorContratos.BuscarEmpleados(txtBuscarEmpleados.Text);
             if (dt != null)
             {
-                dgvContratos.DataSource = dt;
+                dgvEmpleados.DataSource = dt;
             }
+        }
+
+        private void TxtBuscarContratosParaBaja_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = gestorContratos.BuscarContratosInfo(txtBuscarContratosParaBaja.Text);
+            if (dt != null) dgvContratosBaja.DataSource = dt;
+        }
+
+        private void TxtBuscarContratosParaFiniquito_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = gestorContratos.BuscarContratosInfo(txtBuscarContratosParaFiniquito.Text);
+            if (dt != null) dgvContratosFiniquito.DataSource = dt;
         }
 
         private void TxtBuscarEmpresas_TextChanged(object sender, EventArgs e)
@@ -78,33 +97,62 @@ namespace gestorempresa.Views.Admin
             }
         }
 
-        private void DgvContratos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvContratos.Rows[e.RowIndex];
-                idContratoSeleccionado = Convert.ToInt32(row.Cells["id_contrato"].Value);
-                txtEmpleado.Text = row.Cells["id_empleado"].Value.ToString();
-                txtEmpresa.Text = row.Cells["id_empresa"].Value.ToString();
+                DataGridViewRow row = dgvEmpleados.Rows[e.RowIndex];
+                int idEmpleado = Convert.ToInt32(row.Cells["id_empleado"].Value);
+                txtEmpleado.Text = idEmpleado.ToString();
 
-                if (row.Cells["fecha_inicio"].Value != DBNull.Value)
-                    dtpFechaInicio.Value = Convert.ToDateTime(row.Cells["fecha_inicio"].Value);
-
-                if (row.Cells["fecha_fin"].Value != DBNull.Value)
+                DataTable dt = gestorContratos.ObtenerContratoActivoPorEmpleado(idEmpleado);
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    dtpFechaFin.Checked = true;
-                    dtpFechaFin.Value = Convert.ToDateTime(row.Cells["fecha_fin"].Value);
+                    DataRow r = dt.Rows[0];
+                    idContratoSeleccionado = Convert.ToInt32(r["id_contrato"]);
+                    txtEmpresa.Text = r["id_empresa"].ToString();
+                    if (r["fecha_inicio"] != DBNull.Value) dtpFechaInicio.Value = Convert.ToDateTime(r["fecha_inicio"]);
+                    if (r["fecha_fin"] != DBNull.Value)
+                    {
+                        dtpFechaFin.Checked = true;
+                        dtpFechaFin.Value = Convert.ToDateTime(r["fecha_fin"]);
+                    }
+                    else
+                    {
+                        dtpFechaFin.Checked = false;
+                    }
+                    txtSalario.Text = r["salario_bruto_anual"].ToString();
+                    txtTipoContrato.Text = r["tipo_contrato"].ToString();
+                    cmbEstado.SelectedItem = r["estado"].ToString();
                 }
                 else
                 {
+                    idContratoSeleccionado = -1;
+                    txtEmpresa.Text = string.Empty;
+                    dtpFechaInicio.Value = DateTime.Now;
                     dtpFechaFin.Checked = false;
+                    txtSalario.Text = string.Empty;
+                    txtTipoContrato.Text = string.Empty;
+                    if (cmbEstado.Items.Count > 0) cmbEstado.SelectedIndex = 0;
                 }
+            }
+        }
 
-                txtSalario.Text = row.Cells["salario_bruto_anual"].Value.ToString();
-                txtTipoContrato.Text = row.Cells["tipo_contrato"].Value.ToString();
+        private void DgvContratosBaja_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvContratosBaja.Rows[e.RowIndex];
+                txtIdContratoBaja.Text = row.Cells["id_contrato"].Value.ToString();
+            }
+        }
 
-                string estado = row.Cells["estado"].Value.ToString();
-                cmbEstado.SelectedItem = estado;
+        private void DgvContratosFiniquito_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvContratosFiniquito.Rows[e.RowIndex];
+                txtIdContratoFiniquito.Text = row.Cells["id_contrato"].Value.ToString();
             }
         }
 
@@ -134,7 +182,7 @@ namespace gestorempresa.Views.Admin
                 if (result > 0)
                 {
                     MessageBox.Show("Contrato creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarContratos();
+                    CargarContratosInfo(); // Recargar los dgvs de contratos en otras pestañas
                     LimpiarFormularioContrato();
                 }
                 else
@@ -161,7 +209,7 @@ namespace gestorempresa.Views.Admin
                 if (result > 0)
                 {
                     MessageBox.Show("Contrato modificado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarContratos();
+                    CargarContratosInfo();
                     LimpiarFormularioContrato();
                 }
                 else
@@ -192,6 +240,25 @@ namespace gestorempresa.Views.Admin
             txtTipoContrato.Text = string.Empty;
             if (cmbEstado.Items.Count > 0)
                 cmbEstado.SelectedIndex = 0; // activo por defecto
+        }
+
+        private void BtnLimpiarBaja_Click(object sender, EventArgs e)
+        {
+            txtIdContratoBaja.Text = string.Empty;
+            dtpBajaInicio.Value = DateTime.Now;
+            dtpBajaFin.Checked = false;
+            dtpBajaFin.Value = DateTime.Now;
+            txtMotivo.Text = string.Empty;
+            txtPrestacion.Text = string.Empty;
+        }
+
+        private void BtnLimpiarFiniquito_Click(object sender, EventArgs e)
+        {
+            txtIdContratoFiniquito.Text = string.Empty;
+            dtpFechaDespido.Value = DateTime.Now;
+            txtVacaciones.Text = string.Empty;
+            txtIndemnizacion.Text = string.Empty;
+            txtTotalNeto.Text = string.Empty;
         }
 
         private bool ValidarFormularioContrato()
