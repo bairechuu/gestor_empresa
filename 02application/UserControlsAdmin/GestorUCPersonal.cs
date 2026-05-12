@@ -1,8 +1,7 @@
-﻿using gestor_empresa;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace gestorempresa
+namespace gestor_empresa
 {
     class GestorUCPersonal
     {

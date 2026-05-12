@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
-namespace gestorempresa.Views.Admin
+namespace gestor_empresa.Views.Admin
 {
     public partial class UC_Contratos : UserControl
     {

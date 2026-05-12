@@ -1,4 +1,4 @@
-﻿namespace gestorempresa.Views.Admin
+﻿namespace gestor_empresa.Views.Admin
 {
     partial class UC_Economico
     {

@@ -42,7 +42,7 @@ C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.csproj.C
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_e.920EE98D.Up2Date
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.exe
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.pdb
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Contratos.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Economico.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Presencia.resources
-C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestorempresa.Views.Admin.UC_Personal.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Personal.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Contratos.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Economico.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Presencia.resources
