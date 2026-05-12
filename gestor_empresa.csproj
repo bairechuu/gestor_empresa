@@ -150,8 +150,10 @@
     <Compile Include="02application\GestorEmpleado.cs" />
     <Compile Include="02application\GestorLogin.cs" />
     <Compile Include="02application\UserControlsAdmin\GestorUCContratos.cs" />
+    <Compile Include="02application\UserControlsAdmin\GestorUCEconomico.cs" />
     <Compile Include="02application\UserControlsAdmin\GestorUCPersonal.cs" />
     <Compile Include="02application\BBDD_Clases\Jornada.cs" />
+    <Compile Include="02application\UserControlsAdmin\GestorUCPresencia.cs" />
     <Compile Include="03data\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
