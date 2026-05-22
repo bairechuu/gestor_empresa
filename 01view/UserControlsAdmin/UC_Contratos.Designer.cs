@@ -35,6 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lblNumPagas = new System.Windows.Forms.Label();
+            this.txtNumPagas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblIrpfFijo = new System.Windows.Forms.Label();
+            this.txtIrpfFijo = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tbcLaboral = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbpContratos = new System.Windows.Forms.TabPage();
@@ -96,9 +103,16 @@
             this.dgvFiniquitos = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvContratosFiniquito = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtBuscarContratosParaFiniquito = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBuscarContratosActivos = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dgvContratosActivos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lblNumPagas = new System.Windows.Forms.Label();
+            this.txtNumPagas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblIrpfFijo = new System.Windows.Forms.Label();
+            this.txtIrpfFijo = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbcLaboral.SuspendLayout();
             this.tbpContratos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContratosActivos)).BeginInit();
             this.gbxFormularioContrato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tbpIncapacidades.SuspendLayout();
@@ -157,6 +171,8 @@
             // tbpContratos
             // 
             this.tbpContratos.BackColor = System.Drawing.Color.White;
+            this.tbpContratos.Controls.Add(this.txtBuscarContratosActivos);
+            this.tbpContratos.Controls.Add(this.dgvContratosActivos);
             this.tbpContratos.Controls.Add(this.txtBuscarEmpresas);
             this.tbpContratos.Controls.Add(this.dgvEmpresas);
             this.tbpContratos.Controls.Add(this.txtBuscarEmpleados);
@@ -175,7 +191,7 @@
             this.txtBuscarEmpresas.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscarEmpresas.DefaultText = "";
             this.txtBuscarEmpresas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBuscarEmpresas.Location = new System.Drawing.Point(498, 260);
+            this.txtBuscarEmpresas.Location = new System.Drawing.Point(498, 175);
             this.txtBuscarEmpresas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarEmpresas.Name = "txtBuscarEmpresas";
             this.txtBuscarEmpresas.PlaceholderText = "Buscar empresa...";
@@ -192,7 +208,7 @@
             this.dgvEmpresas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -200,19 +216,19 @@
             this.dgvEmpresas.ColumnHeadersHeight = 32;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmpresas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.dgvEmpresas.Location = new System.Drawing.Point(498, 294);
+            this.dgvEmpresas.Location = new System.Drawing.Point(498, 210);
             this.dgvEmpresas.Name = "dgvEmpresas";
             this.dgvEmpresas.ReadOnly = true;
             this.dgvEmpresas.RowHeadersVisible = false;
             this.dgvEmpresas.RowHeadersWidth = 51;
-            this.dgvEmpresas.Size = new System.Drawing.Size(446, 193);
+            this.dgvEmpresas.Size = new System.Drawing.Size(446, 110);
             this.dgvEmpresas.TabIndex = 23;
             this.dgvEmpresas.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvEmpresas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -224,19 +240,88 @@
             this.dgvEmpresas.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvEmpresas.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvEmpresas.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvEmpresas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvEmpresas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvEmpresas.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvEmpresas.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmpresas.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvEmpresas.ThemeStyle.ReadOnly = true;
             this.dgvEmpresas.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvEmpresas.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvEmpresas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvEmpresas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvEmpresas.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvEmpresas.ThemeStyle.RowsStyle.Height = 22;
             this.dgvEmpresas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvEmpresas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEmpresas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpresas_CellClick);
+            // 
+            // txtBuscarContratosActivos
+            // 
+            this.txtBuscarContratosActivos.BorderRadius = 10;
+            this.txtBuscarContratosActivos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarContratosActivos.DefaultText = "";
+            this.txtBuscarContratosActivos.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBuscarContratosActivos.Location = new System.Drawing.Point(498, 320);
+            this.txtBuscarContratosActivos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscarContratosActivos.Name = "txtBuscarContratosActivos";
+            this.txtBuscarContratosActivos.PlaceholderText = "Buscar contratos activos...";
+            this.txtBuscarContratosActivos.SelectedText = "";
+            this.txtBuscarContratosActivos.Size = new System.Drawing.Size(446, 28);
+            this.txtBuscarContratosActivos.TabIndex = 24;
+            this.txtBuscarContratosActivos.TextChanged += new System.EventHandler(this.TxtBuscarContratosActivos_TextChanged);
+            // 
+            // dgvContratosActivos
+            // 
+            this.dgvContratosActivos.AllowUserToAddRows = false;
+            this.dgvContratosActivos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvContratosActivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvContratosActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvContratosActivos.ColumnHeadersHeight = 32;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContratosActivos.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvContratosActivos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.dgvContratosActivos.Location = new System.Drawing.Point(498, 355);
+            this.dgvContratosActivos.Name = "dgvContratosActivos";
+            this.dgvContratosActivos.ReadOnly = true;
+            this.dgvContratosActivos.RowHeadersVisible = false;
+            this.dgvContratosActivos.RowHeadersWidth = 51;
+            this.dgvContratosActivos.Size = new System.Drawing.Size(446, 130);
+            this.dgvContratosActivos.TabIndex = 25;
+            this.dgvContratosActivos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
+            this.dgvContratosActivos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.dgvContratosActivos.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvContratosActivos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvContratosActivos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvContratosActivos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvContratosActivos.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvContratosActivos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.Height = 32;
+            this.dgvContratosActivos.ThemeStyle.ReadOnly = true;
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvContratosActivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContratosActivos_CellClick);
             // 
             // txtBuscarEmpleados
             // 
@@ -260,6 +345,10 @@
             this.gbxFormularioContrato.BorderThickness = 2;
             this.gbxFormularioContrato.Controls.Add(this.cmbEstado);
             this.gbxFormularioContrato.Controls.Add(this.lblEstado);
+            this.gbxFormularioContrato.Controls.Add(this.txtNumPagas);
+            this.gbxFormularioContrato.Controls.Add(this.lblNumPagas);
+            this.gbxFormularioContrato.Controls.Add(this.txtIrpfFijo);
+            this.gbxFormularioContrato.Controls.Add(this.lblIrpfFijo);
             this.gbxFormularioContrato.Controls.Add(this.txtTipoContrato);
             this.gbxFormularioContrato.Controls.Add(this.lblTipoContrato);
             this.gbxFormularioContrato.Controls.Add(this.txtSalario);
@@ -297,7 +386,7 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "activo",
             "inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(227, 344);
+            this.cmbEstado.Location = new System.Drawing.Point(227, 366);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(193, 36);
             this.cmbEstado.TabIndex = 20;
@@ -305,7 +394,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(223, 320);
+            this.lblEstado.Location = new System.Drawing.Point(223, 342);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(54, 20);
             this.lblEstado.TabIndex = 19;
@@ -317,7 +406,7 @@
             this.txtTipoContrato.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTipoContrato.DefaultText = "";
             this.txtTipoContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTipoContrato.Location = new System.Drawing.Point(18, 280);
+            this.txtTipoContrato.Location = new System.Drawing.Point(18, 242);
             this.txtTipoContrato.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTipoContrato.Name = "txtTipoContrato";
             this.txtTipoContrato.PlaceholderText = "";
@@ -328,7 +417,7 @@
             // lblTipoContrato
             // 
             this.lblTipoContrato.AutoSize = true;
-            this.lblTipoContrato.Location = new System.Drawing.Point(14, 256);
+            this.lblTipoContrato.Location = new System.Drawing.Point(14, 218);
             this.lblTipoContrato.Name = "lblTipoContrato";
             this.lblTipoContrato.Size = new System.Drawing.Size(122, 20);
             this.lblTipoContrato.TabIndex = 17;
@@ -340,7 +429,7 @@
             this.txtSalario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSalario.DefaultText = "";
             this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSalario.Location = new System.Drawing.Point(18, 352);
+            this.txtSalario.Location = new System.Drawing.Point(18, 366);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PlaceholderText = "";
@@ -351,7 +440,7 @@
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(14, 328);
+            this.lblSalario.Location = new System.Drawing.Point(14, 342);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(137, 20);
             this.lblSalario.TabIndex = 15;
@@ -364,7 +453,7 @@
             this.dtpFechaFin.FillColor = System.Drawing.Color.WhiteSmoke;
             this.dtpFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(227, 204);
+            this.dtpFechaFin.Location = new System.Drawing.Point(227, 172);
             this.dtpFechaFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFechaFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFechaFin.Name = "dtpFechaFin";
@@ -376,7 +465,7 @@
             // lblFechaFin
             // 
             this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Location = new System.Drawing.Point(223, 180);
+            this.lblFechaFin.Location = new System.Drawing.Point(223, 148);
             this.lblFechaFin.Name = "lblFechaFin";
             this.lblFechaFin.Size = new System.Drawing.Size(69, 20);
             this.lblFechaFin.TabIndex = 13;
@@ -389,7 +478,7 @@
             this.dtpFechaInicio.FillColor = System.Drawing.Color.WhiteSmoke;
             this.dtpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(18, 204);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(18, 172);
             this.dtpFechaInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFechaInicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
@@ -400,7 +489,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(14, 180);
+            this.lblFechaInicio.Location = new System.Drawing.Point(14, 148);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(86, 20);
             this.lblFechaInicio.TabIndex = 11;
@@ -412,7 +501,7 @@
             this.txtEmpresa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmpresa.DefaultText = "";
             this.txtEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmpresa.Location = new System.Drawing.Point(18, 126);
+            this.txtEmpresa.Location = new System.Drawing.Point(18, 110);
             this.txtEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.PlaceholderText = "Empresa seleccionada...";
@@ -423,7 +512,7 @@
             // lblEmpresa
             // 
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(14, 102);
+            this.lblEmpresa.Location = new System.Drawing.Point(14, 86);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(66, 20);
             this.lblEmpresa.TabIndex = 9;
@@ -458,7 +547,7 @@
             this.btnLimpiarContrato.FillColor = System.Drawing.Color.DimGray;
             this.btnLimpiarContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLimpiarContrato.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarContrato.Location = new System.Drawing.Point(298, 410);
+            this.btnLimpiarContrato.Location = new System.Drawing.Point(298, 415);
             this.btnLimpiarContrato.Name = "btnLimpiarContrato";
             this.btnLimpiarContrato.Size = new System.Drawing.Size(122, 38);
             this.btnLimpiarContrato.TabIndex = 6;
@@ -471,7 +560,7 @@
             this.btnModificarContrato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(150)))), ((int)(((byte)(128)))));
             this.btnModificarContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnModificarContrato.ForeColor = System.Drawing.Color.White;
-            this.btnModificarContrato.Location = new System.Drawing.Point(158, 410);
+            this.btnModificarContrato.Location = new System.Drawing.Point(158, 415);
             this.btnModificarContrato.Name = "btnModificarContrato";
             this.btnModificarContrato.Size = new System.Drawing.Size(122, 38);
             this.btnModificarContrato.TabIndex = 5;
@@ -484,12 +573,58 @@
             this.btnCrearContrato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(46)))), ((int)(((byte)(80)))));
             this.btnCrearContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCrearContrato.ForeColor = System.Drawing.Color.White;
-            this.btnCrearContrato.Location = new System.Drawing.Point(18, 410);
+            this.btnCrearContrato.Location = new System.Drawing.Point(18, 415);
             this.btnCrearContrato.Name = "btnCrearContrato";
             this.btnCrearContrato.Size = new System.Drawing.Size(122, 38);
             this.btnCrearContrato.TabIndex = 4;
             this.btnCrearContrato.Text = "Crear";
             this.btnCrearContrato.Click += new System.EventHandler(this.BtnCrearContrato_Click);
+            // 
+            // txtNumPagas
+            // 
+            this.txtNumPagas.BorderRadius = 10;
+            this.txtNumPagas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNumPagas.DefaultText = "12";
+            this.txtNumPagas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNumPagas.Location = new System.Drawing.Point(18, 304);
+            this.txtNumPagas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumPagas.Name = "txtNumPagas";
+            this.txtNumPagas.PlaceholderText = "";
+            this.txtNumPagas.SelectedText = "";
+            this.txtNumPagas.Size = new System.Drawing.Size(193, 28);
+            this.txtNumPagas.TabIndex = 26;
+            // 
+            // lblNumPagas
+            // 
+            this.lblNumPagas.AutoSize = true;
+            this.lblNumPagas.Location = new System.Drawing.Point(14, 280);
+            this.lblNumPagas.Name = "lblNumPagas";
+            this.lblNumPagas.Size = new System.Drawing.Size(71, 20);
+            this.lblNumPagas.TabIndex = 27;
+            this.lblNumPagas.Text = "Nº Pagas";
+            // 
+            // txtIrpfFijo
+            // 
+            this.txtIrpfFijo.BorderRadius = 10;
+            this.txtIrpfFijo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIrpfFijo.DefaultText = "15.00";
+            this.txtIrpfFijo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIrpfFijo.Location = new System.Drawing.Point(227, 304);
+            this.txtIrpfFijo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIrpfFijo.Name = "txtIrpfFijo";
+            this.txtIrpfFijo.PlaceholderText = "";
+            this.txtIrpfFijo.SelectedText = "";
+            this.txtIrpfFijo.Size = new System.Drawing.Size(193, 28);
+            this.txtIrpfFijo.TabIndex = 28;
+            // 
+            // lblIrpfFijo
+            // 
+            this.lblIrpfFijo.AutoSize = true;
+            this.lblIrpfFijo.Location = new System.Drawing.Point(223, 280);
+            this.lblIrpfFijo.Name = "lblIrpfFijo";
+            this.lblIrpfFijo.Size = new System.Drawing.Size(89, 20);
+            this.lblIrpfFijo.TabIndex = 29;
+            this.lblIrpfFijo.Text = "IRPF Fijo (%)";
             // 
             // dgvEmpleados
             // 
@@ -499,7 +634,7 @@
             this.dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -507,7 +642,7 @@
             this.dgvEmpleados.ColumnHeadersHeight = 32;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
@@ -519,7 +654,7 @@
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.RowHeadersWidth = 51;
-            this.dgvEmpleados.Size = new System.Drawing.Size(446, 190);
+            this.dgvEmpleados.Size = new System.Drawing.Size(446, 110);
             this.dgvEmpleados.TabIndex = 1;
             this.dgvEmpleados.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Light;
             this.dgvEmpleados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
@@ -531,14 +666,14 @@
             this.dgvEmpleados.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvEmpleados.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvEmpleados.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvEmpleados.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvEmpleados.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvEmpleados.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvEmpleados.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmpleados.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvEmpleados.ThemeStyle.ReadOnly = true;
             this.dgvEmpleados.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvEmpleados.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvEmpleados.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvEmpleados.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvEmpleados.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvEmpleados.ThemeStyle.RowsStyle.Height = 22;
             this.dgvEmpleados.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -596,6 +731,7 @@
             this.txtPrestacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrestacion.Name = "txtPrestacion";
             this.txtPrestacion.PlaceholderText = "";
+            this.txtPrestacion.ReadOnly = true;
             this.txtPrestacion.SelectedText = "";
             this.txtPrestacion.Size = new System.Drawing.Size(402, 28);
             this.txtPrestacion.TabIndex = 18;
@@ -647,6 +783,7 @@
             this.dtpBajaFin.Size = new System.Drawing.Size(193, 36);
             this.dtpBajaFin.TabIndex = 14;
             this.dtpBajaFin.Value = new System.DateTime(2026, 5, 11, 15, 16, 9, 262);
+            this.dtpBajaFin.ValueChanged += new System.EventHandler(this.CalcularPrestacionBaja);
             // 
             // lblBajaFin
             // 
@@ -671,6 +808,7 @@
             this.dtpBajaInicio.Size = new System.Drawing.Size(193, 36);
             this.dtpBajaInicio.TabIndex = 12;
             this.dtpBajaInicio.Value = new System.DateTime(2026, 5, 11, 15, 16, 9, 313);
+            this.dtpBajaInicio.ValueChanged += new System.EventHandler(this.CalcularPrestacionBaja);
             // 
             // lblBajaInicio
             // 
@@ -694,6 +832,7 @@
             this.txtIdContratoBaja.SelectedText = "";
             this.txtIdContratoBaja.Size = new System.Drawing.Size(402, 28);
             this.txtIdContratoBaja.TabIndex = 8;
+            this.txtIdContratoBaja.TextChanged += new System.EventHandler(this.CalcularPrestacionBaja);
             // 
             // lblContratoBaja
             // 
@@ -728,7 +867,7 @@
             this.btnModificarBaja.Size = new System.Drawing.Size(122, 38);
             this.btnModificarBaja.TabIndex = 5;
             this.btnModificarBaja.Text = "Modificar";
-            this.btnModificarBaja.Click += new System.EventHandler(this.MostrarMensajeDesarrollo);
+            this.btnModificarBaja.Click += new System.EventHandler(this.BtnModificarBaja_Click);
             // 
             // btnCrearBaja
             // 
@@ -741,7 +880,7 @@
             this.btnCrearBaja.Size = new System.Drawing.Size(122, 38);
             this.btnCrearBaja.TabIndex = 4;
             this.btnCrearBaja.Text = "Registrar Baja";
-            this.btnCrearBaja.Click += new System.EventHandler(this.MostrarMensajeDesarrollo);
+            this.btnCrearBaja.Click += new System.EventHandler(this.BtnCrearBaja_Click);
             // 
             // dgvBajas
             // 
@@ -751,7 +890,7 @@
             this.dgvBajas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
@@ -759,7 +898,7 @@
             this.dgvBajas.ColumnHeadersHeight = 32;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
@@ -783,18 +922,19 @@
             this.dgvBajas.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvBajas.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvBajas.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvBajas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvBajas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvBajas.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvBajas.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBajas.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvBajas.ThemeStyle.ReadOnly = true;
             this.dgvBajas.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBajas.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvBajas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvBajas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvBajas.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvBajas.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBajas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dgvBajas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvBajas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBajas_CellClick);
             // 
             // dgvContratosBaja
             // 
@@ -803,7 +943,7 @@
             this.dgvContratosBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -812,7 +952,7 @@
             this.dgvContratosBaja.ColumnHeadersHeight = 29;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
@@ -836,14 +976,14 @@
             this.dgvContratosBaja.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvContratosBaja.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvContratosBaja.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvContratosBaja.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvContratosBaja.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosBaja.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosBaja.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvContratosBaja.ThemeStyle.HeaderStyle.Height = 29;
             this.dgvContratosBaja.ThemeStyle.ReadOnly = true;
             this.dgvContratosBaja.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvContratosBaja.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvContratosBaja.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvContratosBaja.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosBaja.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosBaja.ThemeStyle.RowsStyle.Height = 22;
             this.dgvContratosBaja.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -1047,7 +1187,7 @@
             this.btnGuardarFiniquito.Size = new System.Drawing.Size(122, 38);
             this.btnGuardarFiniquito.TabIndex = 5;
             this.btnGuardarFiniquito.Text = "Guardar";
-            this.btnGuardarFiniquito.Click += new System.EventHandler(this.MostrarMensajeDesarrollo);
+            this.btnGuardarFiniquito.Click += new System.EventHandler(this.BtnGuardarFiniquito_Click);
             // 
             // btnCalcularFiniquito
             // 
@@ -1060,7 +1200,7 @@
             this.btnCalcularFiniquito.Size = new System.Drawing.Size(122, 38);
             this.btnCalcularFiniquito.TabIndex = 4;
             this.btnCalcularFiniquito.Text = "Calcular";
-            this.btnCalcularFiniquito.Click += new System.EventHandler(this.MostrarMensajeDesarrollo);
+            this.btnCalcularFiniquito.Click += new System.EventHandler(this.BtnCalcularFiniquito_Click);
             // 
             // dgvFiniquitos
             // 
@@ -1070,7 +1210,7 @@
             this.dgvFiniquitos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
@@ -1078,7 +1218,7 @@
             this.dgvFiniquitos.ColumnHeadersHeight = 32;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
@@ -1102,14 +1242,14 @@
             this.dgvFiniquitos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvFiniquitos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvFiniquitos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvFiniquitos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvFiniquitos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvFiniquitos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvFiniquitos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFiniquitos.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvFiniquitos.ThemeStyle.ReadOnly = true;
             this.dgvFiniquitos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvFiniquitos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvFiniquitos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvFiniquitos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvFiniquitos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvFiniquitos.ThemeStyle.RowsStyle.Height = 22;
             this.dgvFiniquitos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -1122,7 +1262,7 @@
             this.dgvContratosFiniquito.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1131,7 +1271,7 @@
             this.dgvContratosFiniquito.ColumnHeadersHeight = 29;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
@@ -1155,14 +1295,14 @@
             this.dgvContratosFiniquito.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvContratosFiniquito.ThemeStyle.HeaderStyle.Height = 29;
             this.dgvContratosFiniquito.ThemeStyle.ReadOnly = true;
             this.dgvContratosFiniquito.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvContratosFiniquito.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvContratosFiniquito.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvContratosFiniquito.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosFiniquito.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosFiniquito.ThemeStyle.RowsStyle.Height = 22;
             this.dgvContratosFiniquito.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -1209,6 +1349,7 @@
             this.gbxFormularioFiniquito.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiniquitos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratosFiniquito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContratosActivos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1243,6 +1384,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTipoContrato;
         private System.Windows.Forms.Label lblEstado;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstado;
+        private System.Windows.Forms.Label lblNumPagas;
+        private Guna.UI2.WinForms.Guna2TextBox txtNumPagas;
+        private System.Windows.Forms.Label lblIrpfFijo;
+        private Guna.UI2.WinForms.Guna2TextBox txtIrpfFijo;
 
         private Guna.UI2.WinForms.Guna2GroupBox gbxFormularioBaja;
         private Guna.UI2.WinForms.Guna2DataGridView dgvBajas;
@@ -1280,5 +1425,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarContratosParaBaja;
         private Guna.UI2.WinForms.Guna2DataGridView dgvContratosFiniquito;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarContratosParaFiniquito;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvContratosActivos;
+        private Guna.UI2.WinForms.Guna2TextBox txtBuscarContratosActivos;
     }
 }

@@ -120,6 +120,12 @@
     <Compile Include="01view\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="01view\UserControlsAdmin\UC_Bienvenida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="01view\UserControlsAdmin\UC_Bienvenida.Designer.cs">
+      <DependentUpon>UC_Bienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="01view\UserControlsAdmin\UC_Personal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="01view\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01view\UserControlsAdmin\UC_Bienvenida.resx">
+      <DependentUpon>UC_Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01view\UserControlsAdmin\UC_Personal.resx">
       <DependentUpon>UC_Personal.cs</DependentUpon>

@@ -10,7 +10,7 @@ namespace gestor_empresa
         public DataTable ObtenerContratosActivos(string filtro = "")
         {
             string sql = @"
-                SELECT c.id_contrato, e.nombre, e.apellidos, e.nif, c.salario_bruto_anual 
+                SELECT c.id_contrato, e.nombre, e.apellidos, e.nif, c.salario_bruto_anual, c.num_pagas, c.irpf_fijo
                 FROM contrato c
                 INNER JOIN empleado e ON c.id_empleado = e.id_empleado
                 WHERE c.estado = 'activo' AND (e.nombre LIKE @filtro OR e.apellidos LIKE @filtro OR e.nif LIKE @filtro OR c.id_contrato LIKE @filtro)";
@@ -89,6 +89,51 @@ namespace gestor_empresa
         public string ObtenerError()
         {
             return Database.Error;
+        }
+
+        public decimal ObtenerHorasExtra(int idContrato, int mes, int anyo)
+        {
+            string sql = @"
+                SELECT IFNULL(SUM(horas_extra), 0) 
+                FROM jornada 
+                WHERE id_contrato = @id_contrato AND MONTH(fecha) = @mes AND YEAR(fecha) = @anyo";
+
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@id_contrato", idContrato),
+                new MySqlParameter("@mes", mes),
+                new MySqlParameter("@anyo", anyo)
+            };
+
+            DataTable dt = Database.Consulta(sql, parametros);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                return Convert.ToDecimal(dt.Rows[0][0]);
+            }
+            return 0;
+        }
+
+        public decimal ObtenerPrestacionesBaja(int idContrato, int mes, int anyo)
+        {
+            string sql = @"
+                SELECT IFNULL(SUM(prestacion), 0) 
+                FROM baja 
+                WHERE id_contrato = @id_contrato 
+                AND MONTH(fecha_inicio) = @mes AND YEAR(fecha_inicio) = @anyo";
+
+            MySqlParameter[] parametros = new MySqlParameter[]
+            {
+                new MySqlParameter("@id_contrato", idContrato),
+                new MySqlParameter("@mes", mes),
+                new MySqlParameter("@anyo", anyo)
+            };
+
+            DataTable dt = Database.Consulta(sql, parametros);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                return Convert.ToDecimal(dt.Rows[0][0]);
+            }
+            return 0;
         }
     }
 }

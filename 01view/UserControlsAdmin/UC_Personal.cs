@@ -38,12 +38,13 @@ namespace gestor_empresa.Views.Admin
             btnLimpiarEmpresa_Click(null, null);
         }
 
+        // Filtro los empleados en tiempo real según lo que el usuario va escribiendo.
         private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
         {
             string filtro = txtBuscarEmpleado.Text;
             if (string.IsNullOrEmpty(filtro))
             {
-                CargarEmpleados();
+                CargarEmpleados(); // Si está vacío, vuelvo a mostrar todos.
             }
             else
             {
@@ -141,6 +142,7 @@ namespace gestor_empresa.Views.Admin
             }
         }
 
+        // Actualizo el rol (administrador/empleado) del usuario seleccionado.
         private void btnCambiarRol_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(nifSeleccionado) || cmbRol.SelectedItem == null)
@@ -173,7 +175,7 @@ namespace gestor_empresa.Views.Admin
             if (resultado > 0)
             {
                 MessageBox.Show("Contraseña actualizada.");
-                txtPassword.Text = "";
+                txtPassword.Text = ""; // Limpio la caja de contraseña por seguridad.
             }
             else
             {

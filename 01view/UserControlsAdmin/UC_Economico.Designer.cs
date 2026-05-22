@@ -39,6 +39,10 @@
             this.txtCotizacionSS = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSalarioNeto = new System.Windows.Forms.Label();
             this.txtSalarioNeto = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblExtrasalariales = new System.Windows.Forms.Label();
+            this.txtExtrasalariales = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSalarioBase = new System.Windows.Forms.Label();
+            this.txtSalarioBase = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCalcular = new Guna.UI2.WinForms.Guna2Button();
             this.btnGenerar = new Guna.UI2.WinForms.Guna2Button();
             this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
@@ -127,8 +131,12 @@
             this.gbxGeneracion.Controls.Add(this.txtRetencionIRPF);
             this.gbxGeneracion.Controls.Add(this.lblCotizacionSS);
             this.gbxGeneracion.Controls.Add(this.txtCotizacionSS);
+            this.gbxGeneracion.Controls.Add(this.lblSalarioBase);
+            this.gbxGeneracion.Controls.Add(this.txtSalarioBase);
             this.gbxGeneracion.Controls.Add(this.lblSalarioNeto);
             this.gbxGeneracion.Controls.Add(this.txtSalarioNeto);
+            this.gbxGeneracion.Controls.Add(this.lblExtrasalariales);
+            this.gbxGeneracion.Controls.Add(this.txtExtrasalariales);
             this.gbxGeneracion.Controls.Add(this.btnCalcular);
             this.gbxGeneracion.Controls.Add(this.btnGenerar);
             this.gbxGeneracion.Controls.Add(this.btnLimpiar);
@@ -190,7 +198,7 @@
             // lblSalarioBruto
             // 
             this.lblSalarioBruto.AutoSize = true;
-            this.lblSalarioBruto.Location = new System.Drawing.Point(14, 102);
+            this.lblSalarioBruto.Location = new System.Drawing.Point(14, 180);
             this.lblSalarioBruto.Name = "lblSalarioBruto";
             this.lblSalarioBruto.Size = new System.Drawing.Size(95, 20);
             this.lblSalarioBruto.TabIndex = 4;
@@ -202,16 +210,17 @@
             this.txtSalarioBruto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSalarioBruto.DefaultText = "";
             this.txtSalarioBruto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSalarioBruto.Location = new System.Drawing.Point(18, 126);
+            this.txtSalarioBruto.Location = new System.Drawing.Point(18, 204);
             this.txtSalarioBruto.Name = "txtSalarioBruto";
             this.txtSalarioBruto.PlaceholderText = "0.00";
+            this.txtSalarioBruto.ReadOnly = true;
             this.txtSalarioBruto.Size = new System.Drawing.Size(193, 36);
             this.txtSalarioBruto.TabIndex = 5;
             // 
             // lblRetencionIRPF
             // 
             this.lblRetencionIRPF.AutoSize = true;
-            this.lblRetencionIRPF.Location = new System.Drawing.Point(223, 102);
+            this.lblRetencionIRPF.Location = new System.Drawing.Point(223, 180);
             this.lblRetencionIRPF.Name = "lblRetencionIRPF";
             this.lblRetencionIRPF.Size = new System.Drawing.Size(109, 20);
             this.lblRetencionIRPF.TabIndex = 6;
@@ -223,16 +232,17 @@
             this.txtRetencionIRPF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRetencionIRPF.DefaultText = "";
             this.txtRetencionIRPF.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRetencionIRPF.Location = new System.Drawing.Point(227, 126);
+            this.txtRetencionIRPF.Location = new System.Drawing.Point(227, 204);
             this.txtRetencionIRPF.Name = "txtRetencionIRPF";
             this.txtRetencionIRPF.PlaceholderText = "0.00";
+            this.txtRetencionIRPF.ReadOnly = true;
             this.txtRetencionIRPF.Size = new System.Drawing.Size(193, 36);
             this.txtRetencionIRPF.TabIndex = 7;
             // 
             // lblCotizacionSS
             // 
             this.lblCotizacionSS.AutoSize = true;
-            this.lblCotizacionSS.Location = new System.Drawing.Point(14, 180);
+            this.lblCotizacionSS.Location = new System.Drawing.Point(14, 258);
             this.lblCotizacionSS.Name = "lblCotizacionSS";
             this.lblCotizacionSS.Size = new System.Drawing.Size(98, 20);
             this.lblCotizacionSS.TabIndex = 8;
@@ -244,9 +254,10 @@
             this.txtCotizacionSS.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCotizacionSS.DefaultText = "";
             this.txtCotizacionSS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCotizacionSS.Location = new System.Drawing.Point(18, 204);
+            this.txtCotizacionSS.Location = new System.Drawing.Point(18, 282);
             this.txtCotizacionSS.Name = "txtCotizacionSS";
             this.txtCotizacionSS.PlaceholderText = "0.00";
+            this.txtCotizacionSS.ReadOnly = true;
             this.txtCotizacionSS.Size = new System.Drawing.Size(193, 36);
             this.txtCotizacionSS.TabIndex = 9;
             // 
@@ -254,7 +265,7 @@
             // 
             this.lblSalarioNeto.AutoSize = true;
             this.lblSalarioNeto.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSalarioNeto.Location = new System.Drawing.Point(223, 180);
+            this.lblSalarioNeto.Location = new System.Drawing.Point(223, 258);
             this.lblSalarioNeto.Name = "lblSalarioNeto";
             this.lblSalarioNeto.Size = new System.Drawing.Size(92, 20);
             this.lblSalarioNeto.TabIndex = 10;
@@ -266,12 +277,56 @@
             this.txtSalarioNeto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSalarioNeto.DefaultText = "";
             this.txtSalarioNeto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txtSalarioNeto.Location = new System.Drawing.Point(227, 204);
+            this.txtSalarioNeto.Location = new System.Drawing.Point(227, 282);
             this.txtSalarioNeto.Name = "txtSalarioNeto";
             this.txtSalarioNeto.PlaceholderText = "0.00";
             this.txtSalarioNeto.ReadOnly = true;
             this.txtSalarioNeto.Size = new System.Drawing.Size(193, 36);
             this.txtSalarioNeto.TabIndex = 11;
+            // 
+            // lblExtrasalariales
+            // 
+            this.lblExtrasalariales.AutoSize = true;
+            this.lblExtrasalariales.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.lblExtrasalariales.Location = new System.Drawing.Point(223, 102);
+            this.lblExtrasalariales.Name = "lblExtrasalariales";
+            this.lblExtrasalariales.Size = new System.Drawing.Size(150, 20);
+            this.lblExtrasalariales.TabIndex = 20;
+            this.lblExtrasalariales.Text = "P. Extrasalariales (€)";
+            // 
+            // txtExtrasalariales
+            // 
+            this.txtExtrasalariales.BorderRadius = 10;
+            this.txtExtrasalariales.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtExtrasalariales.DefaultText = "0";
+            this.txtExtrasalariales.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtExtrasalariales.Location = new System.Drawing.Point(227, 126);
+            this.txtExtrasalariales.Name = "txtExtrasalariales";
+            this.txtExtrasalariales.PlaceholderText = "Dietas, Transporte...";
+            this.txtExtrasalariales.Size = new System.Drawing.Size(193, 36);
+            this.txtExtrasalariales.TabIndex = 21;
+            // 
+            // lblSalarioBase
+            // 
+            this.lblSalarioBase.AutoSize = true;
+            this.lblSalarioBase.Location = new System.Drawing.Point(14, 102);
+            this.lblSalarioBase.Name = "lblSalarioBase";
+            this.lblSalarioBase.Size = new System.Drawing.Size(89, 20);
+            this.lblSalarioBase.TabIndex = 22;
+            this.lblSalarioBase.Text = "Salario Base";
+            // 
+            // txtSalarioBase
+            // 
+            this.txtSalarioBase.BorderRadius = 10;
+            this.txtSalarioBase.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSalarioBase.DefaultText = "";
+            this.txtSalarioBase.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSalarioBase.Location = new System.Drawing.Point(18, 126);
+            this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.PlaceholderText = "0.00";
+            this.txtSalarioBase.ReadOnly = true;
+            this.txtSalarioBase.Size = new System.Drawing.Size(193, 36);
+            this.txtSalarioBase.TabIndex = 23;
             // 
             // btnGenerar
             // 
@@ -333,7 +388,7 @@
             this.dgvContratosActivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -341,7 +396,7 @@
             this.dgvContratosActivos.ColumnHeadersHeight = 32;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -365,14 +420,14 @@
             this.dgvContratosActivos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvContratosActivos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvContratosActivos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvContratosActivos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvContratosActivos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosActivos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosActivos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvContratosActivos.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvContratosActivos.ThemeStyle.ReadOnly = true;
             this.dgvContratosActivos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvContratosActivos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvContratosActivos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvContratosActivos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvContratosActivos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvContratosActivos.ThemeStyle.RowsStyle.Height = 22;
             this.dgvContratosActivos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -445,7 +500,7 @@
             this.dgvHistorico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -453,7 +508,7 @@
             this.dgvHistorico.ColumnHeadersHeight = 32;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
@@ -477,14 +532,14 @@
             this.dgvHistorico.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.dgvHistorico.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dgvHistorico.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHistorico.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvHistorico.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvHistorico.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvHistorico.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHistorico.ThemeStyle.HeaderStyle.Height = 32;
             this.dgvHistorico.ThemeStyle.ReadOnly = true;
             this.dgvHistorico.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvHistorico.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvHistorico.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.dgvHistorico.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Yu Gothic UI", 8F);
             this.dgvHistorico.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvHistorico.ThemeStyle.RowsStyle.Height = 22;
             this.dgvHistorico.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
@@ -538,5 +593,9 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbFiltroMes;
         private Guna.UI2.WinForms.Guna2TextBox txtFiltroAnyo;
         private Guna.UI2.WinForms.Guna2DataGridView dgvHistorico;
+        private System.Windows.Forms.Label lblExtrasalariales;
+        private Guna.UI2.WinForms.Guna2TextBox txtExtrasalariales;
+        private System.Windows.Forms.Label lblSalarioBase;
+        private Guna.UI2.WinForms.Guna2TextBox txtSalarioBase;
     }
 }

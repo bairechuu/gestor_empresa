@@ -46,3 +46,4 @@ C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Ad
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Contratos.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Economico.resources
 C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Presencia.resources
+C:\Users\renac\OneDrive\Desktop\gestor_empresa\obj\Debug\gestor_empresa.Views.Admin.UC_Bienvenida.resources

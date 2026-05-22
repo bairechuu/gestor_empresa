@@ -9,6 +9,7 @@ namespace gestor_empresa
         public FormAdmin()
         {
             InitializeComponent();
+            CargarControlBienvenida();
         }
 
         /* 
@@ -17,6 +18,14 @@ namespace gestor_empresa
         Borro el anterior UC (si había).
         Ajusto la posición y lo añado al panel central para que se muestre.
         */
+
+        private void CargarControlBienvenida()
+        {
+            UC_Bienvenida UCBienvenida = new UC_Bienvenida();
+            pnlCentral.Controls.Clear();
+            UCBienvenida.Dock = DockStyle.Fill;
+            pnlCentral.Controls.Add(UCBienvenida);
+        }
         private void btnGestPersonal_Click(object sender, EventArgs e)
         {
             UC_Personal UCPersonal = new UC_Personal();
