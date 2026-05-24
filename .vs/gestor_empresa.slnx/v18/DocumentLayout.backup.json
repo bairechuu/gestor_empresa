@@ -3,52 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_contratos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_contratos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\formadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_contratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_contratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\formadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_bienvenida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\02application\\gestorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\gestorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\gestorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\usercontrolsadmin\\gestoruccontratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:02application\\usercontrolsadmin\\gestoruccontratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_contratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_contratos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,7 +71,7 @@
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_presencia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|c:\\users\\renac\\onedrive\\desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_presencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -81,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\03data\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:03data\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_contratos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|solutionrelative:01view\\usercontrolsadmin\\uc_contratos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1233B9C1-2F48-4A0C-A865-2C425E744AF6}|gestor_empresa.csproj|C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\usercontrolsadmin\\uc_personal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,33 +134,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormAdmin.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.Designer.cs",
-              "RelativeDocumentMoniker": "01view\\FormAdmin.Designer.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.Designer.cs",
-              "RelativeToolTip": "01view\\FormAdmin.Designer.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwGMBAABBAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FormEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs",
+              "RelativeDocumentMoniker": "01view\\FormEmpleado.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormEmpleado.cs",
+              "RelativeToolTip": "01view\\FormEmpleado.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T10:27:10.944Z",
+              "WhenOpened": "2026-05-24T15:52:22.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Bienvenida.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs [Dise\u00F1o]",
+              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:14:49.054Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_Bienvenida.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:15:02.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "01view\\FormAdmin.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.cs",
+              "RelativeToolTip": "01view\\FormAdmin.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAiwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T11:22:58.64Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UC_Bienvenida.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
-              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs*",
-              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs*",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAMwHEAAAA7AAAAAAAAAA==",
+              "Title": "UC_Contratos.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.cs",
+              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Contratos.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.cs",
+              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Contratos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:15:19.178Z",
+              "WhenOpened": "2026-05-12T11:24:53.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UC_Contratos.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
+              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
+              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
+              "ViewState": "AgIAAFcDAAAAAAAAAAAcwG8DAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T19:24:16.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "FormAdmin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.cs",
               "RelativeDocumentMoniker": "01view\\FormAdmin.cs",
@@ -168,45 +222,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UC_Bienvenida.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs",
-              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:14:49.054Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UC_Bienvenida.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs",
-              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.cs*",
-              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAJAAAAAAAAAA==",
+              "Title": "FormAdmin.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.Designer.cs",
+              "RelativeDocumentMoniker": "01view\\FormAdmin.Designer.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.Designer.cs",
+              "RelativeToolTip": "01view\\FormAdmin.Designer.cs",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAcwIwBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:15:02.01Z",
+              "WhenOpened": "2026-05-22T10:27:10.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.cs",
-              "RelativeDocumentMoniker": "01view\\FormAdmin.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\FormAdmin.cs",
-              "RelativeToolTip": "01view\\FormAdmin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "UC_Bienvenida.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
+              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
+              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
+              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Bienvenida.Designer.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAMwFYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:22:58.64Z",
+              "WhenOpened": "2026-05-22T11:15:19.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
               "RelativeDocumentMoniker": "01view\\MainForm.cs",
@@ -214,24 +256,22 @@
               "RelativeToolTip": "01view\\MainForm.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:16:19.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:16:19.694Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "MainForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs",
               "RelativeDocumentMoniker": "01view\\MainForm.cs",
               "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\MainForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "01view\\MainForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:16:16.527Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-22T11:16:16.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "UC_Presencia.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Presencia.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Presencia.cs",
@@ -239,12 +279,11 @@
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Presencia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:23:48.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:23:48.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Jornada.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\BBDD_Clases\\Jornada.cs",
               "RelativeDocumentMoniker": "02application\\BBDD_Clases\\Jornada.cs",
@@ -252,12 +291,11 @@
               "RelativeToolTip": "02application\\BBDD_Clases\\Jornada.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T09:44:07.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T09:44:07.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UC_Economico.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Economico.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Economico.cs",
@@ -265,12 +303,11 @@
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Economico.cs",
               "ViewState": "AgIAAMsAAAAAAAAAAAAowNMAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T13:44:57.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-11T13:44:57.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UC_Personal.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Personal.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Personal.cs",
@@ -278,25 +315,11 @@
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Personal.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAALQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:24:06.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:24:06.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UC_Contratos.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.cs",
-              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Contratos.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.cs",
-              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Contratos.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAADwv0MBAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:24:53.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "GestorEmpleado.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\GestorEmpleado.cs",
               "RelativeDocumentMoniker": "02application\\GestorEmpleado.cs",
@@ -304,12 +327,11 @@
               "RelativeToolTip": "02application\\GestorEmpleado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:09:52.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:09:52.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "GestorUCContratos.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\UserControlsAdmin\\GestorUCContratos.cs",
               "RelativeDocumentMoniker": "02application\\UserControlsAdmin\\GestorUCContratos.cs",
@@ -317,24 +339,22 @@
               "RelativeToolTip": "02application\\UserControlsAdmin\\GestorUCContratos.cs",
               "ViewState": "AgIAALkAAAAAAAAAAAAAwIcAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:22:41.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:22:41.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "UC_Presencia.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Presencia.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Presencia.cs",
               "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Presencia.cs [Dise\u00F1o]",
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Presencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T10:07:08.216Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-22T10:07:08.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "UC_Presencia.Designer.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Presencia.Designer.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Presencia.Designer.cs",
@@ -342,12 +362,11 @@
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Presencia.Designer.cs",
               "ViewState": "AgIAABwCAAAAAAAAAAAcwD0CAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:23:40.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:23:40.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "GestorUCPresencia.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\UserControlsAdmin\\GestorUCPresencia.cs",
               "RelativeDocumentMoniker": "02application\\UserControlsAdmin\\GestorUCPresencia.cs",
@@ -355,37 +374,22 @@
               "RelativeToolTip": "02application\\UserControlsAdmin\\GestorUCPresencia.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAAA2wI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:10:59.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:10:59.569Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "UC_Contratos.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
-              "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
-              "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
-              "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Contratos.Designer.cs",
-              "ViewState": "AgIAAMkEAAAAAAAAAAAUwJcFAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T19:24:16.462Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "UC_Personal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Personal.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Personal.cs",
               "ToolTip": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Personal.cs [Dise\u00F1o]",
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Personal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:24:05.105Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-05-12T11:24:05.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Database.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\03data\\Database.cs",
               "RelativeDocumentMoniker": "03data\\Database.cs",
@@ -397,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "UC_Personal.Designer.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Personal.Designer.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Personal.Designer.cs",
@@ -405,12 +409,11 @@
               "RelativeToolTip": "01view\\UserControlsAdmin\\UC_Personal.Designer.cs",
               "ViewState": "AgIAABEDAAAAAAAAAAAUwCkDAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T11:24:18.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T11:24:18.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "GestorUCEconomico.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\UserControlsAdmin\\GestorUCEconomico.cs",
               "RelativeDocumentMoniker": "02application\\UserControlsAdmin\\GestorUCEconomico.cs",
@@ -422,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "UC_Contratos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\01view\\UserControlsAdmin\\UC_Contratos.cs",
               "RelativeDocumentMoniker": "01view\\UserControlsAdmin\\UC_Contratos.cs",
@@ -434,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "GestorUCPersonal.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\02application\\UserControlsAdmin\\GestorUCPersonal.cs",
               "RelativeDocumentMoniker": "02application\\UserControlsAdmin\\GestorUCPersonal.cs",
@@ -446,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\renac\\OneDrive\\Desktop\\gestor_empresa\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

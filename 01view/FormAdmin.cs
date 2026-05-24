@@ -57,5 +57,16 @@ namespace gestor_empresa
             UCPresencia.Dock = DockStyle.Fill;
             pnlCentral.Controls.Add(UCPresencia);
         }
+
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Seguro que quieres cerrar la sesión?", "Confirmación",
+                MessageBoxButtons.YesNo);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+        }
     }
 }

@@ -849,9 +849,9 @@
             this.btnLimpiarBaja.FillColor = System.Drawing.Color.DimGray;
             this.btnLimpiarBaja.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLimpiarBaja.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarBaja.Location = new System.Drawing.Point(298, 290);
+            this.btnLimpiarBaja.Location = new System.Drawing.Point(302, 290);
             this.btnLimpiarBaja.Name = "btnLimpiarBaja";
-            this.btnLimpiarBaja.Size = new System.Drawing.Size(122, 38);
+            this.btnLimpiarBaja.Size = new System.Drawing.Size(130, 38);
             this.btnLimpiarBaja.TabIndex = 6;
             this.btnLimpiarBaja.Text = "Limpiar";
             this.btnLimpiarBaja.Click += new System.EventHandler(this.BtnLimpiarBaja_Click);
@@ -864,7 +864,7 @@
             this.btnModificarBaja.ForeColor = System.Drawing.Color.White;
             this.btnModificarBaja.Location = new System.Drawing.Point(158, 290);
             this.btnModificarBaja.Name = "btnModificarBaja";
-            this.btnModificarBaja.Size = new System.Drawing.Size(122, 38);
+            this.btnModificarBaja.Size = new System.Drawing.Size(130, 38);
             this.btnModificarBaja.TabIndex = 5;
             this.btnModificarBaja.Text = "Modificar";
             this.btnModificarBaja.Click += new System.EventHandler(this.BtnModificarBaja_Click);
@@ -875,9 +875,9 @@
             this.btnCrearBaja.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(46)))), ((int)(((byte)(80)))));
             this.btnCrearBaja.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCrearBaja.ForeColor = System.Drawing.Color.White;
-            this.btnCrearBaja.Location = new System.Drawing.Point(18, 290);
+            this.btnCrearBaja.Location = new System.Drawing.Point(14, 290);
             this.btnCrearBaja.Name = "btnCrearBaja";
-            this.btnCrearBaja.Size = new System.Drawing.Size(122, 38);
+            this.btnCrearBaja.Size = new System.Drawing.Size(130, 38);
             this.btnCrearBaja.TabIndex = 4;
             this.btnCrearBaja.Text = "Registrar Baja";
             this.btnCrearBaja.Click += new System.EventHandler(this.BtnCrearBaja_Click);

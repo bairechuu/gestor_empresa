@@ -100,6 +100,7 @@
             this.btnLogOff.TabIndex = 3;
             this.btnLogOff.Text = "Cerrar sesión";
             this.btnLogOff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
             // 
             // sprInfoIzq
             // 
@@ -217,6 +218,7 @@
             this.btnCerrarSesion.TabIndex = 3;
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnLogOff_Click);
             // 
             // btnContratos
             // 
